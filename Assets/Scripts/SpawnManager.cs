@@ -1,55 +1,66 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+namespace AloneTower.SpawnSystem
 {
-    [SerializeField]
-    private GameObject[] enemyPrefab;
-
-    [SerializeField]
-    private Transform[] spawnPoints;
-
-  
-    private float spawnDelay;
-    [SerializeField]
-    private float startSpawnDelay;
-
-    [SerializeField]
-    private int enemyCount;
-    [SerializeField]
-    private int nowEnemies;
-
-    private int randEnemy;
-    private int randomPoint;
-
-   
-    
-
-    // Start is called before the first frame update
-    void Start()
+    public class Spawner : MonoBehaviour
     {
-       spawnDelay= startSpawnDelay;
-    }
+        [SerializeField]
+        private GameObject[] enemiesPrefab;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        if (spawnDelay <= 0 && nowEnemies < enemyCount)
+        [SerializeField]
+        private Transform[] spawnPoints;
+
+        private float currentSpawnTimer;
+        [SerializeField]
+        private float startSpawnDelay;
+
+        [SerializeField]
+        private int totalEnemyCount;
+
+        [SerializeField]
+        private int totalSpawnedEnemies;
+
+        private int randEnemyIndex;
+        private int randomPointIndex;
+
+        private void Start()
         {
-            randEnemy = Random.Range(0, enemyPrefab.Length);
-            randomPoint = Random.Range(0, spawnPoints.Length);
-
-            Instantiate(enemyPrefab[randEnemy], 
-                spawnPoints[randomPoint].transform.position,Quaternion.identity);
-
-            spawnDelay = startSpawnDelay;
-            nowEnemies++;
+            currentSpawnTimer = startSpawnDelay;
         }
-        else {
-        
-            spawnDelay -= Time.deltaTime;
+
+        private void Update()
+        {
+            bool canSpawn = CanSpawn();
+
+            if (!canSpawn)
+                return;
+
+            SpawnTimer();
+        }
+
+        private void SpawnTimer()
+        {
+            if (currentSpawnTimer <= 0)
+            {
+                randEnemyIndex = Random.Range(0, enemiesPrefab.Length);
+                randomPointIndex = Random.Range(0, spawnPoints.Length);
+
+                Instantiate(enemiesPrefab[randEnemyIndex],
+                    spawnPoints[randomPointIndex].transform.position, Quaternion.identity);
+
+                currentSpawnTimer = startSpawnDelay;
+                totalSpawnedEnemies++;
+            }
+            else
+            {
+                currentSpawnTimer -= Time.deltaTime;
+            }
+        }
+
+        private bool CanSpawn()
+        {
+            return totalSpawnedEnemies < totalEnemyCount;
         }
     }
 }
+

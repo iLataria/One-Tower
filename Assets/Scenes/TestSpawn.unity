@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71e848aff48a0a48939b479d9fb795e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab:
+  enemiesPrefab:
   - {fileID: 5380374844118480980, guid: df0aedcf186cd9242b82352c1b56d3af, type: 3}
   spawnPoints:
   - {fileID: 1183249253}
@@ -254,9 +254,9 @@ MonoBehaviour:
   - {fileID: 797176008}
   - {fileID: 585402480}
   - {fileID: 526772242}
-  startSpawnDelay: 3
-  enemyCount: 10
-  nowEnemies: 0
+  startSpawnDelay: 0.1
+  totalEnemyCount: 55
+  totalSpawnedEnemies: 0
 --- !u!1 &259450618
 GameObject:
   m_ObjectHideFlags: 0
