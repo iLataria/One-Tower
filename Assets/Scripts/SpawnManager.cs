@@ -10,10 +10,10 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private Transform[] spawnPoints;
 
-    [SerializeField]
+  
     private float spawnDelay;
-
-    public float startSpawnInterval;
+    [SerializeField]
+    private float startSpawnDelay;
 
     [SerializeField]
     private int enemyCount;
@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnDelay= startSpawnInterval;
+       spawnDelay= startSpawnDelay;
     }
 
     // Update is called once per frame
@@ -41,10 +41,10 @@ public class Spawner : MonoBehaviour
             randEnemy = Random.Range(0, enemyPrefab.Length);
             randomPoint = Random.Range(0, spawnPoints.Length);
 
-            Instantiate(enemyPrefab[randEnemy], spawnPoints[randomPoint].transform.position,
-                Quaternion.identity);
+            Instantiate(enemyPrefab[randEnemy], 
+                spawnPoints[randomPoint].transform.position,Quaternion.identity);
 
-            spawnDelay = startSpawnInterval;
+            spawnDelay = startSpawnDelay;
             nowEnemies++;
         }
         else {

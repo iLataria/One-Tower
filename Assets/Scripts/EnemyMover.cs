@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
+    [SerializeField]
+    public GameObject tower;
 
-    
+    [SerializeField]
+    private float speed= 0.3f;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
-    // Update is called once per frame
+        // Update is called once per frame
     void Update()
     {
-        transform.Translate(-0.02f,0,-0.02f);
+      transform.LookAt(tower.transform.position);
+      
+        transform.position = Vector3.Lerp(transform.position,
+                    tower.transform.position, speed*Time.deltaTime);
     }
+    
 }
