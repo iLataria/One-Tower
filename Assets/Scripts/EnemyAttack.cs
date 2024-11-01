@@ -1,27 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 using UnityEngine.UI;
 
-public class EnemyAttack : MonoBehaviour
+namespace AloneTower
 {
-
-    public Slider healthSlider;
-
-    [SerializeField]
-    private float enemyDamage= 1f;
-
-    // Start is called before the first frame update
-    void Start()
+    public class EnemyAttack : MonoBehaviour
     {
+
         
+
+        [SerializeField]
+        private float enemyDamage= 1f;
+
+        private Slider healthSlider;
+ 
+        private void Start()
+        {
+            healthSlider=FindObjectOfType<Slider>();
+        }
+
+        private void Update()
+        {
+        
+        }
+
+        private void OnTriggerStay()
+        {
+
+           healthSlider.value -= enemyDamage;
+        }
     }
 
-    // Update is called once per frame
-    private void OnTriggerStay()
-    {
-            healthSlider.value -= enemyDamage;
-        
-    }
 }
