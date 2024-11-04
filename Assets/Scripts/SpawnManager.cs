@@ -39,7 +39,7 @@ namespace AloneTower.SpawnSystem
         }
 
         private void SpawnTimer()
-        {
+        {  
             if (currentSpawnTimer <= 0)
             {
                 randEnemyIndex = Random.Range(0, enemiesPrefab.Length);
