@@ -1,6 +1,5 @@
-
+using AloneTower.SpawnSystem;
 using UnityEngine;
-
 using UnityEngine.UI;
 
 namespace AloneTower
@@ -8,28 +7,22 @@ namespace AloneTower
     public class EnemyAttack : MonoBehaviour
     {
 
-        
-
         [SerializeField]
         private float enemyDamage= 1f;
 
+        [SerializeField]
         private Slider healthSlider;
- 
-        private void Start()
-        {
-            healthSlider=FindObjectOfType<Slider>();
-        }
-
-        private void Update()
-        {
-        
-        }
 
         private void OnTriggerStay()
         {
-
-           healthSlider.value -= enemyDamage;
+           
+           healthSlider.value -= enemyDamage*Time.deltaTime;
         }
+
+        //public void GetHealthSlider(Slider health)
+        //{
+        //    healthSlider= health;
+        //}
     }
 
 }

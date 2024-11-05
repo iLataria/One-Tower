@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AloneTower.SpawnSystem
 {
     public class Spawner : MonoBehaviour
     {
+        
+        //public GameObject enemy;
+        
         [SerializeField]
         private GameObject[] enemiesPrefab;
 
@@ -23,9 +27,13 @@ namespace AloneTower.SpawnSystem
         private int randEnemyIndex;
         private int randomPointIndex;
 
+        [SerializeField]
+        private Slider healthSlider;
+
         private void Start()
         {
             currentSpawnTimer = startSpawnDelay;
+            
         }
 
         private void Update()
@@ -44,10 +52,11 @@ namespace AloneTower.SpawnSystem
             {
                 randEnemyIndex = Random.Range(0, enemiesPrefab.Length);
                 randomPointIndex = Random.Range(0, spawnPoints.Length);
-
+                
                 Instantiate(enemiesPrefab[randEnemyIndex],
                     spawnPoints[randomPointIndex].transform.position, Quaternion.identity);
-
+                
+                
                 currentSpawnTimer = startSpawnDelay;
                 totalSpawnedEnemies++;
             }
@@ -61,6 +70,11 @@ namespace AloneTower.SpawnSystem
         {
             return totalSpawnedEnemies < totalEnemyCount;
         }
+
+        
+        
+            
+       
     }
 }
 

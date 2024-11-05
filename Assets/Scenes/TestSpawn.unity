@@ -180,8 +180,9 @@ MonoBehaviour:
   - {fileID: 585402480}
   - {fileID: 526772242}
   startSpawnDelay: 0.1
-  totalEnemyCount: 2
+  totalEnemyCount: 5
   totalSpawnedEnemies: 0
+  healthSlider: {fileID: 0}
 --- !u!1 &342299826
 GameObject:
   m_ObjectHideFlags: 0
