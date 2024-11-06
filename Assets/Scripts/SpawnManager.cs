@@ -5,9 +5,6 @@ namespace AloneTower.SpawnSystem
 {
     public class Spawner : MonoBehaviour
     {
-        
-        //public GameObject enemy;
-        
         [SerializeField]
         private GameObject[] enemiesPrefab;
 
@@ -54,8 +51,10 @@ namespace AloneTower.SpawnSystem
                 randomPointIndex = Random.Range(0, spawnPoints.Length);
                 
                 Instantiate(enemiesPrefab[randEnemyIndex],
-                    spawnPoints[randomPointIndex].transform.position, Quaternion.identity);
-                
+                    spawnPoints[randomPointIndex].transform.position, Quaternion.identity)
+                    .GetComponent<EnemyAttack>().healthSlider=healthSlider;
+
+                //previous line -  reference to healthSlider ;
                 
                 currentSpawnTimer = startSpawnDelay;
                 totalSpawnedEnemies++;
@@ -65,16 +64,10 @@ namespace AloneTower.SpawnSystem
                 currentSpawnTimer -= Time.deltaTime;
             }
         }
-
         private bool CanSpawn()
         {
             return totalSpawnedEnemies < totalEnemyCount;
         }
-
-        
-        
-            
-       
     }
 }
 

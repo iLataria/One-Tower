@@ -6,23 +6,19 @@ namespace AloneTower
 {
     public class EnemyAttack : MonoBehaviour
     {
-
         [SerializeField]
         private float enemyDamage= 1f;
 
-        [SerializeField]
-        private Slider healthSlider;
+        // made reference only with public;
+        public Slider healthSlider;
 
         private void OnTriggerStay()
         {
-           
-           healthSlider.value -= enemyDamage*Time.deltaTime;
+           healthSlider.value-= enemyDamage*Time.deltaTime;
+          
         }
 
-        //public void GetHealthSlider(Slider health)
-        //{
-        //    healthSlider= health;
-        //}
+        
     }
 
 }

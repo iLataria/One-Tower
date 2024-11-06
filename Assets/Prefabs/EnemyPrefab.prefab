@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 3154813151104594136, guid: 49f53cb0054e9b9469bb9167b2552895, type: 3}
-  speed: 0.3
+  speed: 1
 --- !u!114 &-6736101990277820392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,3 +136,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDamage: 1
+  healthSlider: {fileID: 0}
