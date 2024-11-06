@@ -179,10 +179,10 @@ MonoBehaviour:
   - {fileID: 797176008}
   - {fileID: 585402480}
   - {fileID: 526772242}
-  startSpawnDelay: 0.1
-  totalEnemyCount: 5
+  startSpawnDelay: 2
+  totalEnemyCount: 4
   totalSpawnedEnemies: 0
-  healthSlider: {fileID: 0}
+  healthSlider: {fileID: 794030161}
 --- !u!1 &342299826
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +452,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 43295492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &794030161 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 929758607740174409, guid: e986500aabd90c94e82be335605ed87d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8816441512194123530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &797176007
 GameObject:
   m_ObjectHideFlags: 0

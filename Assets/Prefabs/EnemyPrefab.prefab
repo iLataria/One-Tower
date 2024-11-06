@@ -135,5 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a28073631ba4894ca1a88fec952c824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDamage: 1
+  enemyDamage: 5
+  damageRate: 2
   healthSlider: {fileID: 0}
