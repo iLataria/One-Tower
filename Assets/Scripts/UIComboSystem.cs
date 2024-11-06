@@ -1,28 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIComboSystem : MonoBehaviour
+namespace AloneTower
 {
-
-    public Slider comboSlider;
-
-   
-    void Start()
+    public class UIComboSystem : MonoBehaviour
     {
-        comboSlider.value = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (comboSlider.value < 100)
-        {
-            comboSlider.value++;
-        }
-        else 
+        [SerializeField]
+        private Slider comboSlider;
+        [SerializeField]
+        private float speed = 5.0f;
+        void Start()
         {
             comboSlider.value = 0;
         }
+        void Update()
+        {
+            if (comboSlider.value < 100)
+            {
+                comboSlider.value += speed;
+            }
+            else
+            {
+                comboSlider.value = 0;
+            }
 
+        }
     }
 }
+
