@@ -1,30 +1,36 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace AloneTower
+public class UIComboSystem : MonoBehaviour
 {
-    public class UIComboSystem : MonoBehaviour
-    {
-        [SerializeField]
-        private Slider comboSlider;
-        [SerializeField]
-        private float speed = 5.0f;
-        void Start()
-        {
-            comboSlider.value = 0;
-        }
-        void Update()
-        {
-            if (comboSlider.value < 100)
-            {
-                comboSlider.value += speed;
-            }
-            else
-            {
-                comboSlider.value = 0;
-            }
+    private float sliderCurrentWidth;
+    private float sliderMinWidth = 30f;
+    private float sliderMaxWidth = 250f;
 
+    [SerializeField]
+    private RectTransform sliderTransform;
+    private void Start()
+    {
+        if ( sliderTransform!= null)
+        {
+            Vector2 newSize = sliderTransform.sizeDelta;
+            newSize.x = sliderMinWidth;
+            sliderTransform.sizeDelta = newSize;
         }
+
+    }
+    private void Update()
+    {
+        
+            Vector2 newSize = sliderTransform.sizeDelta;
+            newSize.x++;
+            sliderTransform.sizeDelta = newSize;
+
+            if (sliderTransform.sizeDelta.x >= sliderMaxWidth)
+            {
+                newSize.x = sliderMinWidth;
+                sliderTransform.sizeDelta = newSize;
+            }
+        
     }
 }
-
