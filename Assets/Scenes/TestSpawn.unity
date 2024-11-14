@@ -736,6 +736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 740186848}
+  - component: {fileID: 740186849}
   m_Layer: 5
   m_Name: ComboSlider
   m_TagString: Untagged
@@ -764,6 +765,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -350}
   m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &740186849
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740186847}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &797176007
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliderTransform: {fileID: 1051129177}
+  canvasGroup: {fileID: 740186849}
 --- !u!114 &1051129179
 MonoBehaviour:
   m_ObjectHideFlags: 0
