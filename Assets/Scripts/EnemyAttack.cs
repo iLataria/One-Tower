@@ -8,27 +8,51 @@ namespace AloneTower
     public class EnemyAttack : MonoBehaviour
     {
         [SerializeField]
-        private float enemyDamage= 1f;
+        private float enemyDamage= 2f;
 
         [SerializeField]
-        private float damageRate=3f;
+        private float damageRate=2f;
 
-        // made reference only with public;
+        private Coroutine coroutine;
+
         public Slider healthSlider;
-
+        
+        private bool IsCoroutineStarted=false;
         private void OnTriggerEnter()
         {
-          StartCoroutine(DamageRating());
-          Debug.Log(damageRate);
+            Debug.Log("Touched");
+            
+            if (!IsCoroutineStarted)
+            {
+               coroutine= StartCoroutine(DamageRating()); 
+                
+            }
+        }
+
+        private void OnTriggerExit()
+        {
+            Debug.Log("Exit");
+
+            if (IsCoroutineStarted)
+            {
+                Debug.Log("Started");
+                StopCoroutine(coroutine);
+                IsCoroutineStarted = false;
+            }
         }
 
         private IEnumerator DamageRating() 
         {
-            while (true)
+            
+            IsCoroutineStarted = true;
+
+            while (healthSlider.value>=0)
             {
                 yield return new WaitForSeconds(damageRate);
-                healthSlider.value -= enemyDamage;
+                healthSlider.value -= enemyDamage;    
             }
+            
+            IsCoroutineStarted=false;
             
         }
         
