@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AloneTower.SpawnSystem
 {
@@ -23,9 +24,13 @@ namespace AloneTower.SpawnSystem
         private int randEnemyIndex;
         private int randomPointIndex;
 
+        [SerializeField]
+        private Slider healthSlider;
+
         private void Start()
         {
             currentSpawnTimer = startSpawnDelay;
+            
         }
 
         private void Update()
@@ -44,10 +49,13 @@ namespace AloneTower.SpawnSystem
             {
                 randEnemyIndex = Random.Range(0, enemiesPrefab.Length);
                 randomPointIndex = Random.Range(0, spawnPoints.Length);
-
+                
                 Instantiate(enemiesPrefab[randEnemyIndex],
-                    spawnPoints[randomPointIndex].transform.position, Quaternion.identity);
+                    spawnPoints[randomPointIndex].transform.position, Quaternion.identity)
+                    .GetComponent<EnemyAttack>().healthSlider=healthSlider;
 
+                //previous line -  reference to healthSlider ;
+                
                 currentSpawnTimer = startSpawnDelay;
                 totalSpawnedEnemies++;
             }
@@ -56,7 +64,6 @@ namespace AloneTower.SpawnSystem
                 currentSpawnTimer -= Time.deltaTime;
             }
         }
-
         private bool CanSpawn()
         {
             return totalSpawnedEnemies < totalEnemyCount;
