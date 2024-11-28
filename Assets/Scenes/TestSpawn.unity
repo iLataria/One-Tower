@@ -255,7 +255,7 @@ MonoBehaviour:
   - {fileID: 585402480}
   - {fileID: 526772242}
   startSpawnDelay: 0.3
-  totalEnemyCount: 10
+  totalEnemyCount: 2
   totalSpawnedEnemies: 0
 --- !u!1 &259450618
 GameObject:
@@ -686,7 +686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 170, y: 0.000033379}
+  m_AnchoredPosition: {x: 155.1, y: 0.000033379}
   m_SizeDelta: {x: 34.7089, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &705167893
@@ -882,7 +882,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 250, y: 60}
+  m_SizeDelta: {x: 110.07, y: 60}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1051129178
 MonoBehaviour:
@@ -898,6 +898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderTransform: {fileID: 1051129177}
   canvasGroup: {fileID: 740186849}
+  floatingTextPrefab: {fileID: 0}
 --- !u!114 &1051129179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,9 +952,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1103448598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f8ff530a091d043b528fbfea58c11e, type: 3}
+  m_Script: {fileID: 11500000, guid: d6c736f4b984551418abe4c34a57f9a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sliderTransform: {fileID: 1051129177}
+  canvasGroup: {fileID: 740186849}
+  floatingTextPrefab: {fileID: 1796843065089415904, guid: e3097ea3d3bf6e34eb193aa71ff403ee,
+    type: 3}
 --- !u!1 &1183249252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1024,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 110, y: 0.000033379}
+  m_AnchoredPosition: {x: 95.8, y: 0.000033379}
   m_SizeDelta: {x: 34.7089, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198023518
