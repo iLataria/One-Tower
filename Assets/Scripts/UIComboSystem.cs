@@ -4,55 +4,62 @@ using UnityEngine.UI;
 
 public class UIComboSystem : MonoBehaviour
 {
-    private float sliderCurrentWidth;
+    
+    private float bonus = 1f;
+    private float slowTimeScale = 0.2f;
     private float sliderMinWidth = 30f;
     private float sliderMaxWidth = 250f;
-    private float alphaChangeSpeed = 0.3f;
+    private float alphaChangeSpeed = 3f;
     private float leftLimit = 110f;
     private float rightLimit = 170f;
+    private Vector2 sliderSize;
+    private Vector3 floatingTextOffset= new Vector3 (90,30,0);
+
     [SerializeField]
     private RectTransform sliderTransform;
+
     [SerializeField]
     private CanvasGroup canvasGroup;
+
+    [SerializeField]
+    private GameObject floatingTextPrefab;
     private void Start()
     {
         canvasGroup.alpha = 0f;
-        StartCoroutine(AlphaChange());
+        
        
     }
-    private void Update()
+
+    private void OnMouseDown()
     {
-        Vector2 currentSize = sliderTransform.sizeDelta;
-        currentSize.x++;
-        sliderTransform.sizeDelta = currentSize;
+        StartCoroutine(ComboCoroutine());
+        
+    }
+    private void SLowDownTime()
+    {
 
-        if (sliderTransform.sizeDelta.x >= sliderMaxWidth || Input.GetMouseButtonDown(0))
-        {
-            Debug.Log(currentSize.x);
-            currentSize.x=sliderMinWidth;
-            sliderTransform.sizeDelta = currentSize;
+        Time.timeScale = slowTimeScale;
 
-            //if (currentSize.x > leftLimit && currentSize.x<rightLimit) 
-            //{
-            //    Debug.Log("Nice");
-            //    newSize.x = sliderMinWidth;
-            //    sliderTransform.sizeDelta = newSize;
+    }
+    private void SpeedUpTime()
+    {
 
-            //}
-            //else
-            //{
-            //    newSize.x = 0;
-            //    sliderTransform.sizeDelta = newSize;
-            //}
-
-
-        }
+        Time.timeScale = 1f;
 
     }
 
-    private IEnumerator AlphaChange()
+    private void ShowFloatingText()
     {
-        yield return new WaitForSeconds(1);
+       Instantiate(floatingTextPrefab,transform.position+floatingTextOffset,Quaternion.identity);
+    }
+
+    private IEnumerator ComboCoroutine()
+    {
+        sliderSize = sliderTransform.sizeDelta;
+        sliderSize.x = sliderMinWidth;
+        sliderTransform.sizeDelta = sliderSize;
+
+        SLowDownTime();
 
         while (canvasGroup.alpha < 1)
         {
@@ -60,22 +67,53 @@ public class UIComboSystem : MonoBehaviour
             yield return null;
         }
        
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
+
+        if(floatingTextPrefab !=null)
+        {
+            ShowFloatingText();
+        }
 
         if (sliderTransform != null)
         {
-            Vector2 newSize = sliderTransform.sizeDelta;
-            newSize.x = sliderMinWidth;
-            yield return null;
+            while (sliderSize.x < sliderMaxWidth)
+            {
+                //
+                sliderSize.x+=bonus/2;
+                yield return null;
+                sliderTransform.sizeDelta = sliderSize;
 
+                if (sliderSize.x >= sliderMaxWidth)
+                {
+                    sliderSize.x = sliderMinWidth;
+                    yield return null;
+                    sliderTransform.sizeDelta = sliderSize;
 
-            //while (newSize.x<sliderMaxWidth)
-            //{
-            //    newSize.x++;
-            //    sliderTransform.sizeDelta = newSize;
-            //    yield return null;
-            //}
+                }
+
+                if (Input.GetMouseButtonDown(0) && (sliderSize.x <=rightLimit)&&(sliderSize.x>=leftLimit))
+                {
+                    sliderSize.x = sliderMinWidth;
+                    yield return null;
+                    sliderTransform.sizeDelta = sliderSize;
+                    bonus++;
+                    Debug.Log(bonus);
+                }
+                else if (Input.GetMouseButtonDown(0))
+                {
+                    sliderTransform.sizeDelta = sliderSize;
+
+                    while (canvasGroup.alpha >0)
+                    {
+                        canvasGroup.alpha -= alphaChangeSpeed * Time.deltaTime;
+                        yield return null;
+                    }
+                    SpeedUpTime();
+                }
+                
+
+            }
         }
-      
+
     }
 }
