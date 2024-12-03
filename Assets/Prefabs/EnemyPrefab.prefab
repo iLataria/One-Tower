@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1196056291235446749}
   - component: {fileID: 3345699645895841018}
   - component: {fileID: 9073848848937158028}
-  - component: {fileID: 7378191056840831986}
+  - component: {fileID: -6736101990277820392}
   m_Layer: 0
   m_Name: EnemyPrefab
   m_TagString: Untagged
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 3154813151104594136, guid: 49f53cb0054e9b9469bb9167b2552895, type: 3}
-  speed: 0.3
---- !u!114 &7378191056840831986
+  speed: 1
+--- !u!114 &-6736101990277820392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,5 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a28073631ba4894ca1a88fec952c824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyDamage: 5
+  damageRate: 2
   healthSlider: {fileID: 0}
-  enemyDamage: 1

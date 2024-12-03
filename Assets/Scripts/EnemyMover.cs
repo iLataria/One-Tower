@@ -1,28 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMover : MonoBehaviour
+namespace AloneTower
 {
-    [SerializeField]
-    public GameObject tower;
+    public class EnemyMover : MonoBehaviour
 
-    [SerializeField]
-    private float speed= 0.3f;
-
-
-    // Start is called before the first frame update
-    void Start()
     {
-    }
+        [SerializeField]
+        private GameObject tower;
 
-        // Update is called once per frame
-    void Update()
-    {
-      transform.LookAt(tower.transform.position);
+        [SerializeField]
+        private float speed= 0.3f;
+
+        private void Update()
+        {
+          transform.LookAt(tower.transform.position);
       
-        transform.position = Vector3.Lerp(transform.position,
-                    tower.transform.position, speed*Time.deltaTime);
-    }
+            transform.position = Vector3.Lerp(transform.position,
+                        tower.transform.position, speed*Time.deltaTime);
+        }
     
+    }
+
 }
