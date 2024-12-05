@@ -6,27 +6,19 @@ public class SoundController : MonoBehaviour
 {
     [SerializeField]
     private AudioSource[] fireSounds;
-    
     void Update()
     {
-        PlaySound();
+        if (Input.GetButtonDown("Jump"))
+        {
+            Debug.Log("Space");
+            PlaySound();
+        }
     }
 
     public void PlaySound()
     {
-      int soundNumber=Random.Range(0, fireSounds.Length);
+        int soundNumber = Random.Range(0, fireSounds.Length);
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("Space");
-            fireSounds[soundNumber].Play();
-        }
-        if (Input.GetKey(KeyCode.P))
-        {
-            Debug.Log("P");
-            fireSounds[soundNumber].Stop();
-        }
-     
-
+        fireSounds[soundNumber].Play();
     }
 }
