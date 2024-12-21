@@ -14,6 +14,7 @@ namespace AloneTower.Bullets
             if (other.tag == $"Enemy")
             {
                 Debug.Log($"Enemy hit");
+                Destroy(other.gameObject);
             }
         }
     }

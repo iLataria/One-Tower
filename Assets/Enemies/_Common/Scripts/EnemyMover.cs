@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
+using AloneTower.Towers;
 
 namespace AloneTower.Enemy
 {
@@ -10,14 +10,12 @@ namespace AloneTower.Enemy
 
     {
         [SerializeField]
-        public GameObject tower;
+        public Tower tower;
         
         [SerializeField]
         private float speed = 0.3f;
 
         private NavMeshAgent _agent;
-
-        // Start is called before the first frame update
 
         private void Awake()
         {
@@ -32,12 +30,11 @@ namespace AloneTower.Enemy
         void Update()
         {
             _agent.SetDestination(tower.transform.position);
-            //transform.LookAt(tower.transform.position + Vector3.up);
-
-            //transform.position = Vector3.Lerp(transform.position,
-            //            tower.transform.position + Vector3.up, speed * Time.deltaTime);
         }
 
+        private void OnDestroy()
+        {
+            tower.Enemies.Remove(gameObject);
+        }
     }
-
 }

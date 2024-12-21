@@ -1,4 +1,5 @@
 using AloneTower.Bullets;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -16,15 +17,30 @@ namespace AloneTower.Towers
         [SerializeField] private Transform _firePoint;
         [SerializeField] private float _bulletSpeed;
         [SerializeField] private float _aimRotationSpeed;
+        [SerializeField] private float _attackRadius;
 
         private float _fireTimer;
         private float _fireInterval;
         private Quaternion _initialRotation;
         private Transform _targetInPreviousFrame;
 
+        public List<GameObject> Enemies { get; set; }
+
+        private void Awake()
+        {
+            Enemies = new List<GameObject>();
+        }
+
         private void Update()
         {
+            _target = GetClosestTarget(_attackRadius);
+
             if (!_target)
+                return;
+
+            bool isTargetInRadius = IsClosestTargetInTowerAttackRadius(_target);
+
+            if (!isTargetInRadius)
                 return;
 
             if (_targetInPreviousFrame != null && _targetInPreviousFrame != _target)
@@ -45,6 +61,30 @@ namespace AloneTower.Towers
             }
 
             _targetInPreviousFrame = _target;
+        }
+
+        private Transform GetClosestTarget(float attackRadius)
+        {
+            Transform closestAliveEnemy = null;
+            float closestDistanceToAliveEnemy = Mathf.Infinity;
+
+            foreach (var enemy in Enemies)
+            {
+                float towerEnemyDistance = Vector3.Distance(enemy.transform.position, transform.position);
+                
+                if (towerEnemyDistance > closestDistanceToAliveEnemy)
+                    continue;
+
+                closestDistanceToAliveEnemy = towerEnemyDistance;
+                closestAliveEnemy = enemy.transform;
+            }
+
+            return closestAliveEnemy;
+        }
+
+        private bool IsClosestTargetInTowerAttackRadius(Transform _target)
+        {
+            return Vector3.Distance(transform.position, _target.position) < _attackRadius;
         }
 
         private bool CanFire()
