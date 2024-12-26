@@ -55,7 +55,8 @@ namespace AloneTower.SpawnSystem
                 GameObject enemy = Instantiate(enemiesPrefab[randEnemyIndex],
                     spawnPoints[randomPointIndex].transform.position, Quaternion.identity);
 
-                enemy.GetComponent<EnemyMover>().tower = _enemyTarget;
+                AIManager.Instance.Units.Add(enemy.GetComponent<AIUnit>());
+                //enemy.GetComponent<EnemyMover>().tower = _enemyTarget;
                 _tower.Enemies.Add(enemy);
 
                 currentSpawnTimer = startSpawnDelay;
