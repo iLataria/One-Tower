@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyAttack : MonoBehaviour
 {
 
-    public Slider healthSlider;
+    //public Slider healthSlider;
 
     [SerializeField]
     private float enemyDamage = 1f;
@@ -20,6 +20,6 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerStay()
     {
-        healthSlider.value -= enemyDamage;
+        //healthSlider.value -= enemyDamage;
     }
 }
