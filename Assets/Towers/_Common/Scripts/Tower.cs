@@ -8,7 +8,7 @@ namespace AloneTower.Towers
 {
     public class Tower : MonoBehaviour
     {
-       // [SerializeField] private SoundController _soundController;
+        [SerializeField] private SoundController _soundController;
         [SerializeField] private Transform _towerHead;
         [SerializeField] private Transform _towerBarrel;
         [SerializeField] private Transform _target;
@@ -103,7 +103,7 @@ namespace AloneTower.Towers
 
         private void Fire(Bullet projectile)
         {
-            //_soundController.PlaySound();
+            _soundController.PlaySound();
             Bullet bullet = Instantiate(projectile, _firePoint.position, Quaternion.LookRotation(_towerBarrel.forward, Vector3.up));
             bullet.RigidBody.velocity = _towerBarrel.forward * _bulletSpeed;
         }
