@@ -1,20 +1,30 @@
+using AloneTower.Towers;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
-
 public class AIUnit : MonoBehaviour
 {
-    public NavMeshAgent Agent;
+    private NavMeshAgent _agent;
+    private Tower _tower;
+
+    private void Awake()
+    {
+        _agent = GetComponent<NavMeshAgent>();
+    }
 
     private void Start()
     {
-        Agent = GetComponent<NavMeshAgent>();
+        _tower = GameObject.FindObjectOfType<Tower>();
         AIManager.Instance.Units.Add(this);
     }
 
     public void MoveTo(Vector3 Position)
     {
-        Agent.SetDestination(Position);
+        _agent.SetDestination(Position);
+    }
+
+    private void OnDestroy()
+    {
+        _tower.Enemies.Remove(gameObject);
     }
 }

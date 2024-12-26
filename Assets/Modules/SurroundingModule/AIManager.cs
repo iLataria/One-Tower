@@ -1,6 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
-
+using System.Collections.Generic;
 
 public class AIManager : MonoBehaviour
 {
@@ -32,16 +31,22 @@ public class AIManager : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnGUI()
+    private void Update()
     {
-        if (GUI.Button(new Rect(20, 20, 200, 50), "Move To Target"))
-        {
-            MakeAgentsCircleTarget();
-        }
+        MakeAgentsCircleTarget();
     }
+    //private void OnGUI()
+    //{
+    //    if (GUI.Button(new Rect(20, 20, 200, 50), "Move To Target"))
+    //    {
+    //        MakeAgentsCircleTarget();
+    //    }
+    //}
 
     private void MakeAgentsCircleTarget()
     {
+        Units.RemoveAll(item => item == null);
+
         for (int i = 0; i < Units.Count; i++)
         {
             Units[i].MoveTo(new Vector3(
