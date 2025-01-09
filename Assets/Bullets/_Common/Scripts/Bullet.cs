@@ -1,3 +1,4 @@
+using AloneTower.Modules;
 using UnityEngine;
 
 namespace AloneTower.Bullets
@@ -14,7 +15,11 @@ namespace AloneTower.Bullets
             if (other.tag == $"Enemy")
             {
                 Debug.Log($"Enemy hit");
+                ComboModule comboModule = FindObjectOfType<ComboModule>();
+                comboModule.ComboValue += 0.1f;
+
                 Destroy(other.gameObject);
+                Destroy(gameObject);
             }
         }
     }
