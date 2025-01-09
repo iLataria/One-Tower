@@ -1,7 +1,8 @@
-using AloneTower.Towers;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+
+using AloneTower.Towers;
+using System.Collections;
 
 namespace AloneTower.Modules
 {
@@ -26,10 +27,30 @@ namespace AloneTower.Modules
             }
         }
 
+        private void Start()
+        {
+            _comboFill.fillAmount = 0f;
+            SetComboValue(0f);
+        }
+
+        public void SetComboValue(float value)
+        {
+            _comboValue = value;
+            _comboFill.fillAmount = _comboValue;
+
+            if (_comboValue >= 1f)
+                StartCoroutine(OnComboStart());
+        }
+
+        public float GetComboValue()
+        {
+            return _comboValue;
+        }
+
         private IEnumerator OnComboStart()
         {
+            //_tower.IsSlowMotion = true;
             Time.timeScale = .1f;
-            
             yield return null;
         }
     }

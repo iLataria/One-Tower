@@ -12,15 +12,19 @@ namespace AloneTower.Bullets
         private void OnTriggerEnter(Collider other)
         {
             Debug.Log($"Triggered with {other.name}");
-            if (other.tag == $"Enemy")
-            {
-                Debug.Log($"Enemy hit");
-                ComboModule comboModule = FindObjectOfType<ComboModule>();
-                comboModule.ComboValue += 0.1f;
 
-                Destroy(other.gameObject);
-                Destroy(gameObject);
-            }
+            if (other.tag != "Enemy")
+                return;
+
+            Debug.Log("Enemy hit");
+            ComboModule comboModule = FindObjectOfType<ComboModule>();
+
+            float currentComboValue = comboModule.GetComboValue();
+            currentComboValue += 0.1f;
+            comboModule.SetComboValue(currentComboValue);
+
+            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
 }

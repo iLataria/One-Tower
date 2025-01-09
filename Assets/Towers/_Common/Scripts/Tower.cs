@@ -24,6 +24,8 @@ namespace AloneTower.Towers
         private Quaternion _initialRotation;
         private Transform _targetInPreviousFrame;
 
+        public bool IsSlowMotion { get; set; }
+
         public List<GameObject> Enemies { get; set; }
 
         private void Awake()
@@ -33,6 +35,9 @@ namespace AloneTower.Towers
 
         private void Update()
         {
+            //if (IsSlowMotion)
+            //    return;
+
             _target = GetClosestTarget(_attackRadius);
 
             if (!_target)
