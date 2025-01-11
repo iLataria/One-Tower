@@ -37,7 +37,7 @@ namespace AloneTower.Towers
         {
             //if (IsSlowMotion)
             //    return;
-
+           
             _target = GetClosestTarget(_attackRadius);
 
             if (!_target)
@@ -109,8 +109,21 @@ namespace AloneTower.Towers
         private void Fire(Bullet projectile)
         {
             _soundController.PlaySound();
-            Bullet bullet = Instantiate(projectile, _firePoint.position, Quaternion.LookRotation(_towerBarrel.forward, Vector3.up));
-            bullet.RigidBody.velocity = _towerBarrel.forward * _bulletSpeed;
+            Ray ray = new Ray(_firePoint.position,transform.forward);
+            Debug.DrawRay(_firePoint.position, _towerHead.transform.forward * 10f, Color.green);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject.tag == "Enemy")
+                {
+                    Debug.Log("Hit");
+                    Destroy(hit.collider.gameObject);
+                }
+
+            }
+
+           // Bullet bullet = Instantiate(projectile, _firePoint.position, Quaternion.LookRotation(_towerBarrel.forward, Vector3.up));
+           // bullet.RigidBody.velocity = _towerBarrel.forward * _bulletSpeed;
         }
 
         private void AimHead(Transform aimTransform, out bool isTowerHeadAimed)
