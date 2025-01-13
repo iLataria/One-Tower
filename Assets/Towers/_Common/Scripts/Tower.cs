@@ -28,18 +28,18 @@ namespace AloneTower.Towers
 
         public bool IsSlowMotion { get; set; }
 
-        public List<GameObject> Enemies { get; set; }
+        public List<Enemy> Enemies { get; set; }
 
         private void Awake()
         {
-            Enemies = new List<GameObject>();
+            Enemies = new List<Enemy>();
         }
 
         private void Update()
         {
             //if (IsSlowMotion)
             //    return;
-            Debug.DrawRay(_firePoint.position, _towerHead.transform.forward * 100f, Color.green);
+            Debug.DrawRay(_firePoint.position, _firePoint.transform.forward * 100f, Color.green);
             _target = GetClosestTarget(_attackRadius);
 
             if (!_target)
@@ -83,7 +83,7 @@ namespace AloneTower.Towers
                     continue;
 
                 closestDistanceToAliveEnemy = towerEnemyDistance;
-                closestAliveEnemy = enemy.transform;
+                closestAliveEnemy = enemy.GetFireTarget();
             }
 
             return closestAliveEnemy;
@@ -112,7 +112,7 @@ namespace AloneTower.Towers
         {
             _VFXExplosionTower.Play();
             _soundController.PlaySound();
-            Ray ray = new Ray(_firePoint.position,transform.forward);
+            Ray ray = new Ray(_firePoint.position, _firePoint.transform.forward);
             
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
@@ -121,7 +121,6 @@ namespace AloneTower.Towers
                 {
                     Debug.Log("Hit");
                     Instantiate(_VFXExplosionEnemy,hit.point,Quaternion.identity);
-                    _VFXExplosionEnemy.Play();
                     //Destroy(_VFXExplosionEnemy);
                     Destroy(hit.collider.gameObject);
                 }

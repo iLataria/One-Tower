@@ -1,5 +1,5 @@
 using UnityEngine;
-using AloneTower.Enemy;
+using AloneTower.Enemies;
 using AloneTower.Towers;
 
 namespace AloneTower.SpawnSystem
@@ -52,11 +52,14 @@ namespace AloneTower.SpawnSystem
                 randEnemyIndex = Random.Range(0, enemiesPrefab.Length);
                 randomPointIndex = Random.Range(0, spawnPoints.Length);
 
-                GameObject enemy = Instantiate(enemiesPrefab[randEnemyIndex],
+                GameObject enemyGO = Instantiate(enemiesPrefab[randEnemyIndex],
                     spawnPoints[randomPointIndex].transform.position, Quaternion.identity);
 
-                AIManager.Instance.Units.Add(enemy.GetComponent<AIUnit>());
-                //enemy.GetComponent<EnemyMover>().tower = _enemyTarget;
+
+                Enemy enemy = enemyGO.GetComponent<Enemy>();
+                enemy.SetTower(_tower);
+
+                AIManager.Instance.Units.Add(enemy.GetAIUnit());
                 _tower.Enemies.Add(enemy);
 
                 currentSpawnTimer = startSpawnDelay;

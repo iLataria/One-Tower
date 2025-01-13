@@ -3863,12 +3863,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesPrefab:
-  - {fileID: 5380374844118480980, guid: df0aedcf186cd9242b82352c1b56d3af, type: 3}
+  - {fileID: 683008132038322932, guid: 8ad5f7f7a8e33ec4baea6570e15d94ca, type: 3}
   spawnPoints:
   - {fileID: 290073942}
   - {fileID: 958397129}
   - {fileID: 1349625135}
-  startSpawnDelay: 1
+  startSpawnDelay: 0.5
   totalEnemyCount: 55
   totalSpawnedEnemies: 0
   _enemyTarget: {fileID: 2047994397}
@@ -5417,7 +5417,7 @@ PrefabInstance:
       objectReference: {fileID: 116324313}
     - target: {fileID: 3370031335986375343, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
       propertyPath: _fireSpeed
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3370031335986375343, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
       propertyPath: _towerHead
@@ -5441,7 +5441,7 @@ PrefabInstance:
       objectReference: {fileID: 1051538973}
     - target: {fileID: 3370031335986375343, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
       propertyPath: _attackRadius
-      value: 55
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3370031335986375343, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
       propertyPath: _soundController

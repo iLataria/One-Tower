@@ -4,13 +4,8 @@ using UnityEngine.AI;
 
 public class AIUnit : MonoBehaviour
 {
-    private NavMeshAgent _agent;
+    [SerializeField] private NavMeshAgent _agent;
     private Tower _tower;
-
-    private void Awake()
-    {
-        _agent = GetComponent<NavMeshAgent>();
-    }
 
     private void Start()
     {
@@ -25,6 +20,6 @@ public class AIUnit : MonoBehaviour
 
     private void OnDestroy()
     {
-        _tower.Enemies.Remove(gameObject);
+       // _tower.Enemies.Remove(transform.GetComponentInParent<Enemy>());
     }
 }
