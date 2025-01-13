@@ -18,6 +18,8 @@ namespace AloneTower.Towers
         [SerializeField] private float _bulletSpeed;
         [SerializeField] private float _aimRotationSpeed;
         [SerializeField] private float _attackRadius;
+        [SerializeField] private ParticleSystem _VFXExplosionTower;
+        [SerializeField] private ParticleSystem _VFXExplosionEnemy;
 
         private float _fireTimer;
         private float _fireInterval;
@@ -37,7 +39,7 @@ namespace AloneTower.Towers
         {
             //if (IsSlowMotion)
             //    return;
-
+            Debug.DrawRay(_firePoint.position, _towerHead.transform.forward * 100f, Color.green);
             _target = GetClosestTarget(_attackRadius);
 
             if (!_target)
@@ -108,9 +110,26 @@ namespace AloneTower.Towers
 
         private void Fire(Bullet projectile)
         {
+            _VFXExplosionTower.Play();
             _soundController.PlaySound();
-            Bullet bullet = Instantiate(projectile, _firePoint.position, Quaternion.LookRotation(_towerBarrel.forward, Vector3.up));
-            bullet.RigidBody.velocity = _towerBarrel.forward * _bulletSpeed;
+            Ray ray = new Ray(_firePoint.position,transform.forward);
+            
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject.tag == "Enemy")
+                {
+                    Debug.Log("Hit");
+                    Instantiate(_VFXExplosionEnemy,hit.point,Quaternion.identity);
+                    _VFXExplosionEnemy.Play();
+                    //Destroy(_VFXExplosionEnemy);
+                    Destroy(hit.collider.gameObject);
+                }
+
+            }
+
+           // Bullet bullet = Instantiate(projectile, _firePoint.position, Quaternion.LookRotation(_towerBarrel.forward, Vector3.up));
+           // bullet.RigidBody.velocity = _towerBarrel.forward * _bulletSpeed;
         }
 
         private void AimHead(Transform aimTransform, out bool isTowerHeadAimed)
