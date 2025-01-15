@@ -65,7 +65,7 @@ namespace AloneTower.Towers
             {
                 bool isTargetExistsAndReadyToFire = CanFire();
                 if (isTargetExistsAndReadyToFire)
-                    Fire(_projectile);
+                    Fire();
             }
 
             _targetInPreviousFrame = _target;
