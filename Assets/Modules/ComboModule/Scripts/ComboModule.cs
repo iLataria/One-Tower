@@ -10,6 +10,7 @@ namespace AloneTower.Modules
     {
         [SerializeField] private Image _comboFill;
         [SerializeField] private Tower _tower;
+        [SerializeField] private UIComboSystem _uiComboSystem;
 
         private float _comboValue;
 
@@ -39,7 +40,8 @@ namespace AloneTower.Modules
             _comboFill.fillAmount = _comboValue;
 
             if (_comboValue >= 1f)
-                StartCoroutine(OnComboStart());
+                StartCoroutine(_uiComboSystem.ComboCoroutine());
+                //StartCoroutine(OnComboStart());
         }
 
         public float GetComboValue()
@@ -50,6 +52,7 @@ namespace AloneTower.Modules
         private IEnumerator OnComboStart()
         {
             //_tower.IsSlowMotion = true;
+
             Time.timeScale = .1f;
             yield return null;
         }
