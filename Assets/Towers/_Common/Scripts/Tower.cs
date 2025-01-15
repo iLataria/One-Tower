@@ -1,4 +1,5 @@
 using AloneTower.Bullets;
+using AloneTower.Modules;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ namespace AloneTower.Towers
         [SerializeField] private float _aimRotationSpeed;
         [SerializeField] private float _attackRadius;
         [SerializeField] private ParticleSystem _VFXExplosionTower;
-        [SerializeField] private ParticleSystem _VFXExplosionEnemy;
+        //[SerializeField] private ParticleSystem _VFXExplosionEnemy;
 
         private float _fireTimer;
         private float _fireInterval;
@@ -108,7 +109,7 @@ namespace AloneTower.Towers
             return false;
         }
 
-        private void Fire(Bullet projectile)
+        private void Fire()
         {
             _VFXExplosionTower.Play();
             _soundController.PlaySound();
@@ -120,15 +121,12 @@ namespace AloneTower.Towers
                 if (hit.collider.gameObject.tag == "Enemy")
                 {
                     Debug.Log("Hit");
-                    Instantiate(_VFXExplosionEnemy,hit.point,Quaternion.identity);
-                    //Destroy(_VFXExplosionEnemy);
-                    Destroy(hit.collider.gameObject);
+                    Enemy enemy=hit.collider.gameObject.GetComponentInParent<Enemy>();
+                    enemy.GetParticleSystem().Play();
+                    Destroy(enemy.GetVisuals());
+                    Destroy(enemy.gameObject);                   
                 }
-
             }
-
-           // Bullet bullet = Instantiate(projectile, _firePoint.position, Quaternion.LookRotation(_towerBarrel.forward, Vector3.up));
-           // bullet.RigidBody.velocity = _towerBarrel.forward * _bulletSpeed;
         }
 
         private void AimHead(Transform aimTransform, out bool isTowerHeadAimed)

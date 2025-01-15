@@ -7,12 +7,18 @@ public class Enemy : MonoBehaviour
     [SerializeField] private AIUnit _aiUnit;
     [SerializeField] private Transform _fireTarget;
     [SerializeField] private EnemyAttack _enemyAttack;
+    [SerializeField] private Collider _collider;
+    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private GameObject _visuals;   
 
     private Tower _tower;
 
     public AIUnit GetAIUnit() => _aiUnit;
+    public GameObject GetVisuals() => _visuals;
+    public Collider GetCollider() => _collider;
     public Transform GetFireTarget() => _fireTarget;
     public EnemyAttack GetEnemyAttack() => _enemyAttack;
+    public ParticleSystem GetParticleSystem() => _particleSystem;
     public void SetTower(Tower tower) => _tower = tower;
 
     private void OnDestroy()
