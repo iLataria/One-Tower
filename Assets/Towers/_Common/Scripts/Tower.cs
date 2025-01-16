@@ -62,8 +62,8 @@ namespace AloneTower.Towers
 
             if (isBarrelAimed)
             {
-                bool isTargetExistsAndReadyToFire = CanFire();
-                if (isTargetExistsAndReadyToFire)
+                bool isTimeToFire = CanFire();
+                if (isTimeToFire)
                     Fire();
             }
 
@@ -110,6 +110,7 @@ namespace AloneTower.Towers
 
         private void Fire()
         {
+            Debug.Log($"Fire");
             _VFXExplosionTower.Play();
             _soundController.PlaySound();
             Ray ray = new Ray(_firePoint.position, _firePoint.transform.forward);
@@ -141,12 +142,17 @@ namespace AloneTower.Towers
             isBarrelAimed = _towerBarrel.transform.rotation == Quaternion.LookRotation(dir, Vector3.up);
         }
 
-        private IEnumerator DestroyEnemy(Enemy _enemy)
+        private IEnumerator DestroyEnemy(Enemy enemy)
         {
-            _enemy.GetParticleSystem().Play();
-            Destroy(_enemy.GetVisuals());
+            Debug.Log($"{enemy.gameObject.GetInstanceID()}");
+
+            enemy.GetParticleSystem().Play();
+            Destroy(enemy.GetVisuals());
+            enemy.GetCollider().enabled = false;
+            _target = null;
+            Enemies.Remove(enemy);
             yield return new WaitForSeconds(0.4f);
-            Destroy(_enemy.gameObject);
+            Destroy(enemy.gameObject);
             yield return null;
         }
     }

@@ -23,6 +23,6 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        _tower.Enemies.Remove(this);
+        //_tower.Enemies.Remove(this);
     }
 }
