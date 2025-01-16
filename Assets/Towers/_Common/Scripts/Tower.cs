@@ -1,5 +1,6 @@
 using AloneTower.Bullets;
 using AloneTower.Modules;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,14 +14,12 @@ namespace AloneTower.Towers
         [SerializeField] private Transform _towerHead;
         [SerializeField] private Transform _towerBarrel;
         [SerializeField] private Transform _target;
-        [SerializeField] private Bullet _projectile;
         [SerializeField] private float _fireSpeed;
         [SerializeField] private Transform _firePoint;
         [SerializeField] private float _bulletSpeed;
         [SerializeField] private float _aimRotationSpeed;
         [SerializeField] private float _attackRadius;
         [SerializeField] private ParticleSystem _VFXExplosionTower;
-        //[SerializeField] private ParticleSystem _VFXExplosionEnemy;
 
         private float _fireTimer;
         private float _fireInterval;
@@ -63,8 +62,8 @@ namespace AloneTower.Towers
 
             if (isBarrelAimed)
             {
-                bool isTargetExistsAndReadyToFire = CanFire();
-                if (isTargetExistsAndReadyToFire)
+                bool isTimeToFire = CanFire();
+                if (isTimeToFire)
                     Fire();
             }
 
@@ -111,6 +110,7 @@ namespace AloneTower.Towers
 
         private void Fire()
         {
+            Debug.Log($"Fire");
             _VFXExplosionTower.Play();
             _soundController.PlaySound();
             Ray ray = new Ray(_firePoint.position, _firePoint.transform.forward);
@@ -122,9 +122,7 @@ namespace AloneTower.Towers
                 {
                     Debug.Log("Hit");
                     Enemy enemy=hit.collider.gameObject.GetComponentInParent<Enemy>();
-                    enemy.GetParticleSystem().Play();
-                    Destroy(enemy.GetVisuals());
-                    Destroy(enemy.gameObject);                   
+                    StartCoroutine(DestroyEnemy(enemy));                  
                 }
             }
         }
@@ -142,6 +140,20 @@ namespace AloneTower.Towers
             Vector3 dir = (_target.position - _towerBarrel.position).normalized;
             _towerBarrel.transform.rotation = Quaternion.RotateTowards(_towerBarrel.transform.rotation, Quaternion.LookRotation(dir, Vector3.up), _aimRotationSpeed * Time.deltaTime);
             isBarrelAimed = _towerBarrel.transform.rotation == Quaternion.LookRotation(dir, Vector3.up);
+        }
+
+        private IEnumerator DestroyEnemy(Enemy enemy)
+        {
+            Debug.Log($"{enemy.gameObject.GetInstanceID()}");
+
+            enemy.GetParticleSystem().Play();
+            Destroy(enemy.GetVisuals());
+            enemy.GetCollider().enabled = false;
+            _target = null;
+            Enemies.Remove(enemy);
+            yield return new WaitForSeconds(0.4f);
+            Destroy(enemy.gameObject);
+            yield return null;
         }
     }
 }
