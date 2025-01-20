@@ -68,12 +68,6 @@ PrefabInstance:
       addedObject: {fileID: 4017426689763445647}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d2d97404e0a76e241906a03ebf1febef, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 597407692341346173}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d2d97404e0a76e241906a03ebf1febef, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2131663614693976130}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d2d97404e0a76e241906a03ebf1febef, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3953827598664434502}
   m_SourcePrefab: {fileID: 100100000, guid: d2d97404e0a76e241906a03ebf1febef, type: 3}
 --- !u!1 &5611225223768819299 stripped
@@ -125,31 +119,6 @@ CapsuleCollider:
   m_Height: 2.327934
   m_Direction: 1
   m_Center: {x: 0.016474962, y: 1.1560332, z: 0.01999998}
---- !u!114 &597407692341346173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5611225223768819299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a28073631ba4894ca1a88fec952c824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyDamage: 1
---- !u!114 &2131663614693976130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5611225223768819299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 016244ba955112c49b10433f24f901a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &3953827598664434502
 NavMeshAgent:
   m_ObjectHideFlags: 0
