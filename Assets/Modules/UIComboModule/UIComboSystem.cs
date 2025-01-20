@@ -7,13 +7,13 @@ public class UIComboSystem : MonoBehaviour
     
     private float bonus = 1f;
     private float slowTimeScale = 0.2f;
-    private float sliderMinWidth = 30f;
+    private float sliderMinWidth = 0f;
     private float sliderMaxWidth = 250f;
     private float alphaChangeSpeed = 3f;
-    private float leftLimit = 110f;
-    private float rightLimit = 170f;
+    private float leftLimit = 100f;
+    private float rightLimit = 150f;
     private Vector2 sliderSize;
-    private Vector3 floatingTextOffset= new Vector3 (90,30,0);
+    //private Vector3 floatingTextOffset= new Vector3 (90,30,0);
 
     [SerializeField]
     private RectTransform sliderTransform;
@@ -21,19 +21,13 @@ public class UIComboSystem : MonoBehaviour
     [SerializeField]
     private CanvasGroup canvasGroup;
 
-    [SerializeField]
-    private GameObject floatingTextPrefab;
+    //[SerializeField]
+    //private GameObject floatingTextPrefab;
     private void Start()
     {
         canvasGroup.alpha = 0f;
         
        
-    }
-
-    private void OnMouseDown()
-    {
-        StartCoroutine(ComboCoroutine());
-        
     }
     private void SLowDownTime()
     {
@@ -48,12 +42,12 @@ public class UIComboSystem : MonoBehaviour
 
     }
 
-    private void ShowFloatingText()
-    {
-       Instantiate(floatingTextPrefab,transform.position+floatingTextOffset,Quaternion.identity);
-    }
+    //private void ShowFloatingText()
+    //{
+    //   Instantiate(floatingTextPrefab,transform.position+floatingTextOffset,Quaternion.identity);
+    //}
 
-    private IEnumerator ComboCoroutine()
+    public IEnumerator ComboCoroutine()
     {
         sliderSize = sliderTransform.sizeDelta;
         sliderSize.x = sliderMinWidth;
@@ -69,16 +63,16 @@ public class UIComboSystem : MonoBehaviour
        
         yield return new WaitForSeconds(0.5f);
 
-        if(floatingTextPrefab !=null)
-        {
-            ShowFloatingText();
-        }
+        //if(floatingTextPrefab !=null)
+        //{
+        //    //ShowFloatingText();
+        //}
 
         if (sliderTransform != null)
         {
             while (sliderSize.x < sliderMaxWidth)
             {
-                //
+                
                 sliderSize.x+=bonus/2;
                 yield return null;
                 sliderTransform.sizeDelta = sliderSize;

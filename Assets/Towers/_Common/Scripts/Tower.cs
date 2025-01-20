@@ -16,7 +16,6 @@ namespace AloneTower.Towers
         [SerializeField] private Transform _target;
         [SerializeField] private float _fireSpeed;
         [SerializeField] private Transform _firePoint;
-        [SerializeField] private float _bulletSpeed;
         [SerializeField] private float _aimRotationSpeed;
         [SerializeField] private float _attackRadius;
         [SerializeField] private ParticleSystem _VFXExplosionTower;
@@ -121,6 +120,10 @@ namespace AloneTower.Towers
                 if (hit.collider.gameObject.tag == "Enemy")
                 {
                     Debug.Log("Hit");
+                    ComboModule comboModule = FindObjectOfType<ComboModule>();
+                    float currentComboValue = comboModule.GetComboValue();
+                    currentComboValue += 0.1f;
+                    comboModule.SetComboValue(currentComboValue);
                     Enemy enemy=hit.collider.gameObject.GetComponentInParent<Enemy>();
                     StartCoroutine(DestroyEnemy(enemy));                  
                 }
