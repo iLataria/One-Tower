@@ -53,7 +53,7 @@ namespace AloneTower.SpawnSystem
                 randomPointIndex = Random.Range(0, spawnPoints.Length);
 
                 GameObject enemyGO = Instantiate(enemiesPrefab[randEnemyIndex],
-                    spawnPoints[randomPointIndex].transform.position, Quaternion.identity);
+                    spawnPoints[randomPointIndex].transform.position, Quaternion.LookRotation(-transform.forward,Vector3.up));
 
 
                 Enemy enemy = enemyGO.GetComponent<Enemy>();
