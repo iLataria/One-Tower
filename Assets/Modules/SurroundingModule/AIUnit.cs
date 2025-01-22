@@ -12,14 +12,8 @@ public class AIUnit : MonoBehaviour
         _tower = GameObject.FindObjectOfType<Tower>();
         AIManager.Instance.Units.Add(this);
     }
-
     public void MoveTo(Vector3 Position)
     {
         _agent.SetDestination(Position);
-    }
-
-    private void OnDestroy()
-    {
-       // _tower.Enemies.Remove(transform.GetComponentInParent<Enemy>());
     }
 }
