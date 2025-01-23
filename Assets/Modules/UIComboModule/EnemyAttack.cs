@@ -1,4 +1,5 @@
 using AloneTower.SpawnSystem;
+using AloneTower.Towers;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,9 @@ namespace AloneTower
         [SerializeField]
         private float damageRate=2f;
 
+        [SerializeField]
+        private Animator _animator;
+
         private Coroutine coroutine;
 
         public Slider healthSlider;
@@ -21,7 +25,7 @@ namespace AloneTower
         private void OnTriggerEnter()
         {
             Debug.Log("Touched");
-            
+            _animator.SetTrigger("ReadyToAttack");
             if (!IsCoroutineStarted)
             {
                coroutine= StartCoroutine(DamageRating()); 
