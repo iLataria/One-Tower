@@ -25,6 +25,8 @@ namespace AloneTower
         private void OnTriggerEnter()
         {
             Debug.Log("Touched");
+            Tower tower = GetComponentInParent<Enemy>().GetTower();
+            transform.LookAt(tower.transform);
             _animator.SetTrigger("ReadyToAttack");
             if (!IsCoroutineStarted)
             {
@@ -47,7 +49,9 @@ namespace AloneTower
 
         private IEnumerator DamageRating() 
         {
-            
+            if (!healthSlider)
+                yield break;
+
             IsCoroutineStarted = true;
 
             while (healthSlider.value>=0)

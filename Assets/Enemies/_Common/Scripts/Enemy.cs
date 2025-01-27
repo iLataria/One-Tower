@@ -20,9 +20,5 @@ public class Enemy : MonoBehaviour
     public EnemyAttack GetEnemyAttack() => _enemyAttack;
     public ParticleSystem GetParticleSystem() => _particleSystem;
     public void SetTower(Tower tower) => _tower = tower;
-
-    private void OnDestroy()
-    {
-        //_tower.Enemies.Remove(this);
-    }
+    public Tower GetTower()=> _tower;
 }
