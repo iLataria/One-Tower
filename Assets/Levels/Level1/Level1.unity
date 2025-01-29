@@ -5754,7 +5754,7 @@ PrefabInstance:
       objectReference: {fileID: 116324313}
     - target: {fileID: 3370031335986375343, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
       propertyPath: _fireSpeed
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3370031335986375343, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
       propertyPath: _towerHead
