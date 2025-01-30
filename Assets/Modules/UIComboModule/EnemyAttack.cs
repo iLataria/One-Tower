@@ -22,9 +22,9 @@ namespace AloneTower
         public Slider healthSlider;
         
         private bool IsCoroutineStarted=false;
-        private void OnTriggerEnter()
+        public void Attack()
         {
-            Debug.Log("Touched");
+            Debug.Log("Attack");
             Tower tower = GetComponentInParent<Enemy>().GetTower();
             transform.LookAt(tower.transform);
             _animator.SetTrigger("ReadyToAttack");
