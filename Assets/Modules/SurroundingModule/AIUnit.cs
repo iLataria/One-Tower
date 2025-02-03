@@ -10,19 +10,42 @@ public class AIUnit : MonoBehaviour
 
     [SerializeField] private EnemyAttack _enemyAttack;
 
+    private bool _isArrived;
+    private bool _runState;
+    private bool _attackState;
+
     private void Start()
     {
         _tower = GameObject.FindObjectOfType<Tower>();
         AIManager.Instance.Units.Add(this);
+        _runState = true;
     }
     public void MoveTo(Vector3 Position)
     {
 
-        _agent.SetDestination(Position);
-        if (Vector3.Distance(_agent.transform.position, Position) <= _agent.stoppingDistance)
+        if (_runState)
         {
-            _enemyAttack.Attack();
-        }
+            _agent.SetDestination(Position);
 
+            if (_agent.pathPending)
+            {
+                Debug.Log($"Pending");
+                return;
+            }
+
+            if (_agent.remainingDistance <= _agent.stoppingDistance)
+            {
+                _isArrived = true;
+                _enemyAttack.Attack();
+
+                _runState = false;
+                _attackState = true;
+            }
+        }
+        else if(_attackState)
+        {
+            _agent.enabled = false;
+            transform.parent.LookAt(_tower.transform);
+        }
     }
 }
