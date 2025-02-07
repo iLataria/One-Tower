@@ -3,6 +3,8 @@ using AloneTower.Modules;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 
 
@@ -19,6 +21,8 @@ namespace AloneTower.Towers
         [SerializeField] private float _aimRotationSpeed;
         [SerializeField] private float _attackRadius;
         [SerializeField] private ParticleSystem _VFXExplosionTower;
+        [SerializeField] public Slider healthSlider;
+        [SerializeField] private ParticleSystem _deadEffect;
 
         private float _fireTimer;
         private float _fireInterval;
@@ -38,6 +42,11 @@ namespace AloneTower.Towers
         {
             //if (IsSlowMotion)
             //    return;
+
+            if (healthSlider.value <= 0)
+            {
+                DeadTower();
+            }
             Debug.DrawRay(_firePoint.position, _firePoint.transform.forward * 100f, Color.green);
             _target = GetClosestTarget(_attackRadius);
 
@@ -145,6 +154,11 @@ namespace AloneTower.Towers
             isBarrelAimed = _towerBarrel.transform.rotation == Quaternion.LookRotation(dir, Vector3.up);
         }
 
+        private void DeadTower()
+        {
+            _deadEffect.Play();
+        }
+
         private IEnumerator DestroyEnemy(Enemy enemy)
         {
             Debug.Log($"{enemy.gameObject.GetInstanceID()}");
@@ -158,5 +172,6 @@ namespace AloneTower.Towers
             Destroy(enemy.gameObject);
             yield return null;
         }
+
     }
 }

@@ -22,12 +22,15 @@ namespace AloneTower
         public Slider healthSlider;
         
         private bool IsCoroutineStarted=false;
+
         public void Attack()
         {
             Debug.Log("Attack");
             Tower tower = GetComponentInParent<Enemy>().GetTower();
+            healthSlider = tower.healthSlider;
             transform.LookAt(tower.transform);
             _animator.SetTrigger("ReadyToAttack");
+            
             if (!IsCoroutineStarted)
             {
                coroutine= StartCoroutine(DamageRating()); 
@@ -35,17 +38,17 @@ namespace AloneTower
             }
         }
 
-        private void OnTriggerExit()
-        {
-            Debug.Log("Exit");
+        //private void OnTriggerExit()
+        //{
+        //    Debug.Log("Exit");
 
-            if (IsCoroutineStarted)
-            {
-                Debug.Log("Started");
-                StopCoroutine(coroutine);
-                IsCoroutineStarted = false;
-            }
-        }
+        //    if (IsCoroutineStarted)
+        //    {
+        //        Debug.Log("Started");
+        //        StopCoroutine(coroutine);
+        //        IsCoroutineStarted = false;
+        //    }
+        //}
 
         private IEnumerator DamageRating() 
         {
