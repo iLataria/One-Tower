@@ -1,4 +1,5 @@
 using AloneTower.SpawnSystem;
+using AloneTower.Towers;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,14 +14,22 @@ namespace AloneTower
         [SerializeField]
         private float damageRate=2f;
 
+        [SerializeField]
+        private Animator _animator;
+
         private Coroutine coroutine;
 
         public Slider healthSlider;
         
         private bool IsCoroutineStarted=false;
-        private void OnTriggerEnter()
+
+        public void Attack()
         {
-            Debug.Log("Touched");
+            Debug.Log("Attack");
+            Tower tower = GetComponentInParent<Enemy>().GetTower();
+            healthSlider = tower.healthSlider;
+            transform.LookAt(tower.transform);
+            _animator.SetTrigger("ReadyToAttack");
             
             if (!IsCoroutineStarted)
             {
@@ -29,21 +38,23 @@ namespace AloneTower
             }
         }
 
-        private void OnTriggerExit()
-        {
-            Debug.Log("Exit");
+        //private void OnTriggerExit()
+        //{
+        //    Debug.Log("Exit");
 
-            if (IsCoroutineStarted)
-            {
-                Debug.Log("Started");
-                StopCoroutine(coroutine);
-                IsCoroutineStarted = false;
-            }
-        }
+        //    if (IsCoroutineStarted)
+        //    {
+        //        Debug.Log("Started");
+        //        StopCoroutine(coroutine);
+        //        IsCoroutineStarted = false;
+        //    }
+        //}
 
         private IEnumerator DamageRating() 
         {
-            
+            if (!healthSlider)
+                yield break;
+
             IsCoroutineStarted = true;
 
             while (healthSlider.value>=0)
