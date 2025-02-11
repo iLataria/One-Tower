@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 
 
+
 namespace AloneTower.Towers
 {
     public class Tower : MonoBehaviour
@@ -23,6 +24,8 @@ namespace AloneTower.Towers
         [SerializeField] private ParticleSystem _VFXExplosionTower;
         [SerializeField] public Slider healthSlider;
         [SerializeField] private ParticleSystem _deadEffect;
+        [SerializeField] private GameObject _restartButton;
+        
 
         private float _fireTimer;
         private float _fireInterval;
@@ -36,6 +39,7 @@ namespace AloneTower.Towers
         private void Awake()
         {
             Enemies = new List<Enemy>();
+            _restartButton.SetActive(false);
         }
 
         private void Update()
@@ -157,6 +161,8 @@ namespace AloneTower.Towers
         private void DeadTower()
         {
             _deadEffect.Play();
+            _restartButton.SetActive(true);
+
         }
 
         private IEnumerator DestroyEnemy(Enemy enemy)
@@ -172,6 +178,8 @@ namespace AloneTower.Towers
             Destroy(enemy.gameObject);
             yield return null;
         }
+
+     
 
     }
 }
