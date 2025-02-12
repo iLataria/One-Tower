@@ -41,8 +41,6 @@ namespace AloneTower
         public void Idle()
         {
             _animator.SetBool("TowerIsDead", true);
-          
-
         }
 
         //private void OnTriggerExit()

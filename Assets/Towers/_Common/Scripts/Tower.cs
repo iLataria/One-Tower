@@ -5,10 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
-
-
 namespace AloneTower.Towers
 {
     public class Tower : MonoBehaviour
@@ -168,7 +164,6 @@ namespace AloneTower.Towers
         private IEnumerator DestroyEnemy(Enemy enemy)
         {
             Debug.Log($"{enemy.gameObject.GetInstanceID()}");
-
             enemy.GetParticleSystem().Play();
             Destroy(enemy.GetVisuals());
             enemy.GetCollider().enabled = false;
