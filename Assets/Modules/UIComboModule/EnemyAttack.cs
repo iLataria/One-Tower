@@ -38,6 +38,13 @@ namespace AloneTower
             }
         }
 
+        public void Idle()
+        {
+            _animator.SetBool("TowerIsDead", true);
+          
+
+        }
+
         //private void OnTriggerExit()
         //{
         //    Debug.Log("Exit");
@@ -57,12 +64,12 @@ namespace AloneTower
 
             IsCoroutineStarted = true;
 
-            while (healthSlider.value>=0)
+            while (healthSlider.value>0)
             {
                 yield return new WaitForSeconds(damageRate);
                 healthSlider.value -= enemyDamage;    
             }
-            
+            Idle();
             IsCoroutineStarted=false;
             
         }
