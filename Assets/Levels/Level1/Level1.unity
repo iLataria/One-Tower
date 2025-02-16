@@ -17620,6 +17620,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3003531183752453513, guid: 545adcd66f1094f4ab94ee4e2b4356d4, type: 3}
+      propertyPath: m_MinValue
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003531183752453513, guid: 545adcd66f1094f4ab94ee4e2b4356d4, type: 3}
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 0}
