@@ -91,10 +91,42 @@ namespace AloneTower.Towers
                     continue;
 
                 closestDistanceToAliveEnemy = towerEnemyDistance;
+                
+                //находим ближайшее расстояние до врага
+
                 closestAliveEnemy = enemy.GetFireTarget();
+               
             }
 
             return closestAliveEnemy;
+        }
+
+        private List<Enemy> GetNearestEnemies( float closestDistance)
+        {
+            List<Enemy> nearestEnemies= new List<Enemy>();
+
+            foreach (var enemy in Enemies)
+            {
+                if(Mathf.Approximately(closestDistance, Vector3.Distance(enemy.transform.position, transform.position)))
+                {
+                    nearestEnemies.Add(enemy);
+                }
+            }
+            return nearestEnemies;
+        }
+
+        private Enemy GetClosestEnemyByDirection(List<Enemy> nearestEnemies) 
+        {
+            if(nearestEnemies.Count == 0 || nearestEnemies==null)
+                return null;
+            Enemy closestEnemyByDirection = null;
+            float smallestAngle= Mathf.Infinity;
+
+            foreach(Enemy enemy in nearestEnemies)
+            {
+               // Найти ближайшего врага по направлению к его transform( скорее всего через Quaternion)
+            }
+            return closestEnemyByDirection;
         }
 
         private bool IsClosestTargetInTowerAttackRadius(Transform _target)
@@ -122,20 +154,12 @@ namespace AloneTower.Towers
             _VFXExplosionTower.Play();
             _soundController.PlaySound();
             Ray ray = new Ray(_firePoint.position, _firePoint.transform.forward);
-            
             RaycastHit hit;
+
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject.tag == "Enemy")
-                {
-                    Debug.Log("Hit");
-                    ComboModule comboModule = FindObjectOfType<ComboModule>();
-                    float currentComboValue = comboModule.GetComboValue();
-                    currentComboValue += 0.1f;
-                    comboModule.SetComboValue(currentComboValue);
-                    Enemy enemy=hit.collider.gameObject.GetComponentInParent<Enemy>();
-                    StartCoroutine(DestroyEnemy(enemy));                  
-                }
+              if (hit.collider.gameObject.tag == "Enemy") 
+                Hit(hit);
             }
         }
 
@@ -154,8 +178,19 @@ namespace AloneTower.Towers
             isBarrelAimed = _towerBarrel.transform.rotation == Quaternion.LookRotation(dir, Vector3.up);
         }
 
+        private void Hit(RaycastHit hit)
+        {
+            Debug.Log("Hit");
+            ComboModule comboModule = FindObjectOfType<ComboModule>();
+            float currentComboValue = comboModule.GetComboValue();
+            currentComboValue += 0.1f;
+            comboModule.SetComboValue(currentComboValue);
+            Enemy enemy = hit.collider.gameObject.GetComponentInParent<Enemy>();
+            StartCoroutine(DestroyEnemy(enemy));
+        }
         private void DeadTower()
         {
+            
             _deadEffect.Play();
         }
 
