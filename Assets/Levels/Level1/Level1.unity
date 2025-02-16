@@ -11378,7 +11378,7 @@ MonoBehaviour:
   - {fileID: 1728109022}
   - {fileID: 990722947}
   startSpawnDelay: 0.5
-  totalEnemyCount: 25
+  totalEnemyCount: 1
   totalSpawnedEnemies: 0
   _enemyTarget: {fileID: 2047994397}
 --- !u!4 &1247910973
