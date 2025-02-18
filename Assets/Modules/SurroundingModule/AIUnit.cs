@@ -12,7 +12,7 @@ public class AIUnit : MonoBehaviour
 
     [SerializeField] private EnemyAttack _enemyAttack;
     public float RadiusAroundTarget = 1f;
-    private EnemyState _currentState;
+    private EnemyState _currentState =EnemyState.IdleState;
     public Vector3 _agentTargetPos;
     private SpawnerModule _spawnerModule;
 
@@ -32,6 +32,12 @@ public class AIUnit : MonoBehaviour
             case EnemyState.AttackState:
                 AttackStateUpdate();
                 break;
+            case EnemyState.IdleState:
+                IdleStateUpdate();
+                break;
+            case EnemyState.DeadState:
+                DeadStateUpdate();
+                break;
             default:
                 break;
         }
@@ -46,8 +52,6 @@ public class AIUnit : MonoBehaviour
     public void AttackStateUpdate()
     {
         Debug.Log($"Attack state update");
-        _agent.enabled = false;
-        transform.parent.LookAt(_tower.transform);
         _enemyAttack.Attack();
     }
     public void AttackStateExit()
@@ -92,6 +96,18 @@ public class AIUnit : MonoBehaviour
     {
         Debug.Log($"Run state exit");
     }
+    public void DeadStateEnter()
+    {
+        Debug.Log("Dead state enter");
+    }
+    public void DeadStateUpdate()
+    {
+        Debug.Log("Dead state update");
+    }
+    public void DeadStateExit()
+    {
+        Debug.Log("Dead state exit");
+    }
     public void SetState(EnemyState targetState)
     {
         if (_currentState == targetState)
@@ -108,6 +124,12 @@ public class AIUnit : MonoBehaviour
             case EnemyState.AttackState:
                 AttackStateExit();
                 break;
+            case EnemyState.IdleState:
+                IdleStateExit();
+                break;
+            case EnemyState.DeadState:
+                DeadStateExit();
+                break;
             default:
                 break;
         }
@@ -122,6 +144,12 @@ public class AIUnit : MonoBehaviour
             case EnemyState.AttackState:
                 AttackStateEnter();
                 break;
+            case EnemyState.IdleState:
+                IdleStateEnter();
+                break;
+            case EnemyState.DeadState:
+                DeadStateEnter(); 
+                break;
             default:
                 break;
         }
@@ -131,6 +159,7 @@ public class AIUnit : MonoBehaviour
     {
         IdleState,
         RunState,
-        AttackState
+        AttackState,
+        DeadState
     }
 }
