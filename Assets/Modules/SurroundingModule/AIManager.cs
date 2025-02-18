@@ -17,7 +17,7 @@ public class AIManager : MonoBehaviour
     }
 
     public Transform Target;
-    public float RadiusAroundTarget = 0.5f;
+    public float RadiusAroundTarget = 2.8f;
     public List<AIUnit> Units = new List<AIUnit>();
 
     private void Awake()
