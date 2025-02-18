@@ -81,6 +81,7 @@ namespace AloneTower.Towers
         private Transform GetClosestTarget(float attackRadius)
         {
             Transform closestAliveEnemy = null;
+
             float closestDistanceToAliveEnemy = Mathf.Infinity;
 
             foreach (var enemy in Enemies)
@@ -91,17 +92,14 @@ namespace AloneTower.Towers
                     continue;
 
                 closestDistanceToAliveEnemy = towerEnemyDistance;
-                
-                //находим ближайшее расстояние до врага
 
-                closestAliveEnemy = enemy.GetFireTarget();
-               
+                List<Enemy> nearestEnemies=GetNearestTargets(closestDistanceToAliveEnemy); 
+                closestAliveEnemy = GetClosestTargetByDirection(nearestEnemies);
             }
-
             return closestAliveEnemy;
         }
 
-        private List<Enemy> GetNearestEnemies( float closestDistance)
+        private List<Enemy> GetNearestTargets( float closestDistance)
         {
             List<Enemy> nearestEnemies= new List<Enemy>();
 
@@ -115,16 +113,25 @@ namespace AloneTower.Towers
             return nearestEnemies;
         }
 
-        private Enemy GetClosestEnemyByDirection(List<Enemy> nearestEnemies) 
+        private Transform GetClosestTargetByDirection(List<Enemy> nearestEnemies) 
         {
             if(nearestEnemies.Count == 0 || nearestEnemies==null)
                 return null;
-            Enemy closestEnemyByDirection = null;
+
+            Transform closestEnemyByDirection = null;
             float smallestAngle= Mathf.Infinity;
+            Vector3 towerCurrentDirection= _towerBarrel.transform.forward;
 
             foreach(Enemy enemy in nearestEnemies)
             {
-               // Найти ближайшего врага по направлению к его transform( скорее всего через Quaternion)
+               Vector3 DirectionToTarget=enemy.transform.position - transform.position;
+               float angleToTarget=Vector3.Angle(towerCurrentDirection, DirectionToTarget);
+
+                if (Mathf.Abs(angleToTarget) < smallestAngle)
+                {
+                    smallestAngle = angleToTarget;
+                    closestEnemyByDirection = enemy.GetFireTarget();
+                }   
             }
             return closestEnemyByDirection;
         }
