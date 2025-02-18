@@ -42,19 +42,6 @@ namespace AloneTower
         {
             _animator.SetBool("TowerIsDead", true);
         }
-
-        //private void OnTriggerExit()
-        //{
-        //    Debug.Log("Exit");
-
-        //    if (IsCoroutineStarted)
-        //    {
-        //        Debug.Log("Started");
-        //        StopCoroutine(coroutine);
-        //        IsCoroutineStarted = false;
-        //    }
-        //}
-
         private IEnumerator DamageRating() 
         {
             if (!healthSlider)

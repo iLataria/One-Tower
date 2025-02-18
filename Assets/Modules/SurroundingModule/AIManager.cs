@@ -35,20 +35,6 @@ public class AIManager : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void MakeAgentsCircleTarget()
-    {
-
-
-        //for (int i = 0; i < Units.Count; i++)
-        //{
-        //    Units[i].MoveTo(new Vector3(
-        //        Target.position.x + RadiusAroundTarget * Mathf.Cos(2 * Mathf.PI * i / _spawnerModule.GetTotalEnemyCount()),
-        //        Target.position.y,
-        //        Target.position.z + RadiusAroundTarget * Mathf.Sin(2 * Mathf.PI * i / _spawnerModule.GetTotalEnemyCount())
-        //        ));
-        //}
-    }
-
     public void CalculatePosition(int totalEnemyCount)
     {
         Debug.Log($"Start calculate path");
