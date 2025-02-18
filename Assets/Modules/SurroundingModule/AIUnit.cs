@@ -37,11 +37,34 @@ public class AIUnit : MonoBehaviour
         }
     }
 
-    public void AttackStateUpdates()
+    public void AttackStateEnter()
+    {
+        Debug.Log($"Attack state enter");
+        _agent.enabled = false;
+        transform.parent.LookAt(_tower.transform);
+    }
+    public void AttackStateUpdate()
     {
         Debug.Log($"Attack state update");
         _agent.enabled = false;
         transform.parent.LookAt(_tower.transform);
+        _enemyAttack.Attack();
+    }
+    public void AttackStateExit()
+    {
+        Debug.Log($"Attack state exit");
+    }
+    public void IdleStateEnter()
+    {
+        Debug.Log("Idle state enter");
+    }
+    public void IdleStateUpdate()
+    {
+        Debug.Log("Idle state update");
+    }
+    public void IdleStateExit()
+    {
+        Debug.Log("Idle state exit");
     }
     public void RunStateEnter()
     {
@@ -49,7 +72,6 @@ public class AIUnit : MonoBehaviour
         Debug.Log($"Run state enter");
         _agent.SetDestination(targetPos);
     }
-
     public void RunStateUpdate()
     {
         Debug.Log($"Run state update");
@@ -59,39 +81,17 @@ public class AIUnit : MonoBehaviour
             Debug.Log($"Pending");
             return;
         }
-
         bool isArrived = _agent.remainingDistance <= .1f;
-
         if (isArrived)
         {
             SetState(EnemyState.AttackState);
             return;
         }
     }
-
     public void RunStateExit()
     {
         Debug.Log($"Run state exit");
     }
-
-    public void AttackStateEnter()
-    {
-        Debug.Log($"Attack state enter");
-        _agent.enabled = false;
-        transform.parent.LookAt(_tower.transform);
-    }
-
-    public void AttackStateUpdate()
-    {
-        _enemyAttack.Attack();
-        Debug.Log($"Attack state update");
-    }
-
-    public void AttackStateExit()
-    {
-        Debug.Log($"Attack state exit");
-    }
-
     public void SetState(EnemyState targetState)
     {
         if (_currentState == targetState)
