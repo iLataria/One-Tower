@@ -29,6 +29,7 @@ namespace AloneTower
             Tower tower = GetComponentInParent<Enemy>().GetTower();
             healthSlider = tower.healthSlider;
             transform.LookAt(tower.transform);
+            if(_animator != null)
             _animator.SetTrigger("ReadyToAttack");
             
             if (!IsCoroutineStarted)
@@ -39,7 +40,7 @@ namespace AloneTower
         }
 
         public void Idle()
-        {
+        {   if(_animator != null)
             _animator.SetBool("TowerIsDead", true);
         }
         private IEnumerator DamageRating() 
