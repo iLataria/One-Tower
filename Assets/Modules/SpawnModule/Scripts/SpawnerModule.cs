@@ -29,8 +29,14 @@ namespace AloneTower.SpawnSystem
         private int randEnemyIndex;
         private int randomPointIndex;
 
+        public int GetTotalEnemyCount()
+        {
+            return totalEnemyCount;
+        }
+
         private void Start()
         {
+            AIManager.Instance.CalculatePosition(totalEnemyCount);
             _tower = FindObjectOfType<Tower>();
             currentSpawnTimer = startSpawnDelay;
         }
@@ -58,8 +64,8 @@ namespace AloneTower.SpawnSystem
 
                 Enemy enemy = enemyGO.GetComponent<Enemy>();
                 enemy.SetTower(_tower);
-
-                AIManager.Instance.Units.Add(enemy.GetAIUnit());
+                enemy.SetState(AIUnit.EnemyState.RunState);
+                
                 _tower.Enemies.Add(enemy);
 
                 currentSpawnTimer = startSpawnDelay;
