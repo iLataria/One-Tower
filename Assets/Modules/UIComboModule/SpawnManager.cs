@@ -54,8 +54,6 @@ namespace AloneTower.SpawnSystem
                     spawnPoints[randomPointIndex].transform.position, Quaternion.identity)
                     .GetComponent<EnemyAttack>().healthSlider=healthSlider;
 
-                //previous line -  reference to healthSlider ;
-                
                 currentSpawnTimer = startSpawnDelay;
                 totalSpawnedEnemies++;
             }

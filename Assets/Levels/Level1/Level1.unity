@@ -927,7 +927,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (23)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -1206,7 +1207,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (24)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1273,7 +1275,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (21)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -1697,7 +1700,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (17)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2059,7 +2063,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -2179,7 +2184,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -2294,7 +2300,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (20)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2356,7 +2363,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (21)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2537,7 +2545,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (27)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2713,7 +2722,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -2833,7 +2843,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (32)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -2922,7 +2933,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (31)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3051,7 +3063,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3108,7 +3121,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -3166,7 +3180,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3377,7 +3392,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -3492,7 +3508,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (30)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4201,7 +4218,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4394,7 +4412,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -4639,7 +4658,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -4883,7 +4903,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (29)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -4951,7 +4972,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (27)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -5290,7 +5312,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -5841,7 +5864,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6250,7 +6274,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6322,7 +6347,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (22)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6379,7 +6405,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (17)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -6437,7 +6464,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (22)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -6699,7 +6727,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7306,7 +7335,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7544,7 +7574,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -7669,7 +7700,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -7846,7 +7878,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (19)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -8103,7 +8136,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -8872,7 +8906,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8940,7 +8975,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (29)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9447,7 +9483,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9514,7 +9551,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -9572,7 +9610,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -10330,7 +10369,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (20)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -10617,7 +10657,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11239,7 +11280,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11301,7 +11343,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -11369,7 +11412,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (33)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -11475,7 +11519,7 @@ MonoBehaviour:
   - {fileID: 1728109022}
   - {fileID: 990722947}
   startSpawnDelay: 0.5
-  totalEnemyCount: 15
+  totalEnemyCount: 1
   totalSpawnedEnemies: 0
   _enemyTarget: {fileID: 2047994397}
 --- !u!4 &1247910973
@@ -11575,7 +11619,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (25)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11826,7 +11871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 2047994398}
-  RadiusAroundTarget: 2.5
+  RadiusAroundTarget: 3
   Units: []
 --- !u!4 &1319827956
 Transform:
@@ -12144,7 +12189,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12588,7 +12634,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -12713,7 +12760,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (30)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -12900,7 +12948,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (26)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -13225,7 +13274,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -14272,7 +14322,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (19)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14391,7 +14442,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (32)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14448,7 +14500,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (33)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14670,7 +14723,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (23)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14768,7 +14822,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (18)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14897,7 +14952,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14959,7 +15015,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (24)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -15079,7 +15136,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (26)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15322,7 +15380,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15570,7 +15629,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -15638,7 +15698,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15757,7 +15818,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (18)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -16356,7 +16418,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (28)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16628,7 +16691,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (25)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -16686,7 +16750,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16743,7 +16808,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -16816,7 +16882,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Skylight (31)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6034828060080512183, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 87431465960102018, guid: 407e4e65456601c4ba66e0697b1c325c, type: 3}
     m_AddedGameObjects: []
@@ -16879,7 +16946,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling Closed (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1729046504968461072, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16962,6 +17030,22 @@ MonoBehaviour:
   _comboFill: {fileID: 908659280}
   _tower: {fileID: 2047994397}
   _uiComboSystem: {fileID: 962960945}
+--- !u!208 &2047994400
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522240192}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.95, y: 2.13, z: 0.95}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0.7, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2053127329
 GameObject:
   m_ObjectHideFlags: 0
@@ -17478,6 +17562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3457395019290170312, guid: c5035feb57cdc5b4d978ebb8f939eb74, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4696913521220154250, guid: c5035feb57cdc5b4d978ebb8f939eb74, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -17532,7 +17620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4696913521220154250, guid: c5035feb57cdc5b4d978ebb8f939eb74, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.4099998
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4696913521220154250, guid: c5035feb57cdc5b4d978ebb8f939eb74, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17556,7 +17644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4696913521220154250, guid: c5035feb57cdc5b4d978ebb8f939eb74, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.16
+      value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 4696913521220154250, guid: c5035feb57cdc5b4d978ebb8f939eb74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -17845,6 +17933,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4788249771237783846, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2047994399}
+    - targetCorrespondingSourceObject: {fileID: 4788249771237783846, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2047994400}
   m_SourcePrefab: {fileID: 100100000, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
