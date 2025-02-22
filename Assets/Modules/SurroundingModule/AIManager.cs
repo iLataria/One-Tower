@@ -18,9 +18,12 @@ public class AIManager : MonoBehaviour
     }
 
     public Transform Target;
-    public float RadiusAroundTarget = 1f;
+
+    public float RadiusAroundTarget = 2.8f;
+    public List<AIUnit> Units = new List<AIUnit>();
 
     public Queue<Vector3> _aiTargetPositions;
+
 
     private void Awake()
     {

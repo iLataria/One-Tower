@@ -81,6 +81,7 @@ namespace AloneTower.Towers
         private Transform GetClosestTarget(float attackRadius)
         {
             Transform closestAliveEnemy = null;
+
             float closestDistanceToAliveEnemy = Mathf.Infinity;
 
             foreach (var enemy in Enemies)
@@ -91,10 +92,48 @@ namespace AloneTower.Towers
                     continue;
 
                 closestDistanceToAliveEnemy = towerEnemyDistance;
-                closestAliveEnemy = enemy.GetFireTarget();
-            }
 
+                List<Enemy> nearestEnemies=GetNearestTargets(closestDistanceToAliveEnemy); 
+                closestAliveEnemy = GetClosestTargetByDirection(nearestEnemies);
+            }
             return closestAliveEnemy;
+        }
+
+        private List<Enemy> GetNearestTargets( float closestDistance)
+        {
+            List<Enemy> nearestEnemies= new List<Enemy>();
+
+            foreach (var enemy in Enemies)
+            {
+                if(Mathf.Approximately(closestDistance, Vector3.Distance(enemy.transform.position, transform.position)))
+                {
+                    nearestEnemies.Add(enemy);
+                }
+            }
+            return nearestEnemies;
+        }
+
+        private Transform GetClosestTargetByDirection(List<Enemy> nearestEnemies) 
+        {
+            if(nearestEnemies.Count == 0 || nearestEnemies==null)
+                return null;
+
+            Transform closestEnemyByDirection = null;
+            float smallestAngle= Mathf.Infinity;
+            Vector3 towerCurrentDirection= _towerBarrel.transform.forward;
+
+            foreach(Enemy enemy in nearestEnemies)
+            {
+               Vector3 DirectionToTarget=enemy.transform.position - transform.position;
+               float angleToTarget=Vector3.Angle(towerCurrentDirection, DirectionToTarget);
+
+                if (Mathf.Abs(angleToTarget) < smallestAngle)
+                {
+                    smallestAngle = angleToTarget;
+                    closestEnemyByDirection = enemy.GetFireTarget();
+                }   
+            }
+            return closestEnemyByDirection;
         }
 
         private bool IsClosestTargetInTowerAttackRadius(Transform _target)
@@ -122,20 +161,12 @@ namespace AloneTower.Towers
             _VFXExplosionTower.Play();
             _soundController.PlaySound();
             Ray ray = new Ray(_firePoint.position, _firePoint.transform.forward);
-            
             RaycastHit hit;
+
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject.tag == "Enemy")
-                {
-                    Debug.Log("Hit");
-                    ComboModule comboModule = FindObjectOfType<ComboModule>();
-                    float currentComboValue = comboModule.GetComboValue();
-                    currentComboValue += 0.1f;
-                    comboModule.SetComboValue(currentComboValue);
-                    Enemy enemy=hit.collider.gameObject.GetComponentInParent<Enemy>();
-                    StartCoroutine(DestroyEnemy(enemy));                  
-                }
+              if (hit.collider.gameObject.tag == "Enemy") 
+                Hit(hit);
             }
         }
 
@@ -154,8 +185,19 @@ namespace AloneTower.Towers
             isBarrelAimed = _towerBarrel.transform.rotation == Quaternion.LookRotation(dir, Vector3.up);
         }
 
+        private void Hit(RaycastHit hit)
+        {
+            Debug.Log("Hit");
+            ComboModule comboModule = FindObjectOfType<ComboModule>();
+            float currentComboValue = comboModule.GetComboValue();
+            currentComboValue += 0.1f;
+            comboModule.SetComboValue(currentComboValue);
+            Enemy enemy = hit.collider.gameObject.GetComponentInParent<Enemy>();
+            StartCoroutine(DestroyEnemy(enemy));
+        }
         private void DeadTower()
         {
+            
             _deadEffect.Play();
             _restartButton.SetActive(true);
 
