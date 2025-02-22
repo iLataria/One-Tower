@@ -1,5 +1,6 @@
 using AloneTower;
 using AloneTower.Towers;
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -21,4 +22,11 @@ public class Enemy : MonoBehaviour
     public ParticleSystem GetParticleSystem() => _particleSystem;
     public void SetTower(Tower tower) => _tower = tower;
     public Tower GetTower()=> _tower;
+
+    public void SetState(AIUnit.EnemyState targetState)
+    {
+        _aiUnit.SetState(targetState);
+    }
+
+
 }
