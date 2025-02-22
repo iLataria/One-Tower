@@ -1,6 +1,8 @@
 using UnityEngine;
 using AloneTower.Enemies;
 using AloneTower.Towers;
+using System;
+using System.Collections.Generic;
 
 namespace AloneTower.SpawnSystem
 {
@@ -26,8 +28,14 @@ namespace AloneTower.SpawnSystem
 
         private Tower _tower;
 
+        private List<Enemy> _enemies = new();
+        public List<Enemy> Enemies => _enemies;
+
         private int randEnemyIndex;
         private int randomPointIndex;
+        public event Action OnSpawnBegin;
+
+        private int _nameCounter;
 
         public int GetTotalEnemyCount()
         {
@@ -55,18 +63,22 @@ namespace AloneTower.SpawnSystem
         {  
             if (currentSpawnTimer <= 0)
             {
-                randEnemyIndex = Random.Range(0, enemiesPrefab.Length);
-                randomPointIndex = Random.Range(0, spawnPoints.Length);
+                if (totalSpawnedEnemies == 1)
+                {
+                    OnSpawnBegin?.Invoke();
+                }
+
+                randEnemyIndex = UnityEngine.Random.Range(0, enemiesPrefab.Length);
+                randomPointIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
 
                 GameObject enemyGO = Instantiate(enemiesPrefab[randEnemyIndex],
                     spawnPoints[randomPointIndex].transform.position, Quaternion.LookRotation(-transform.forward,Vector3.up));
 
-
+                enemyGO.name = $"{_nameCounter++}";
                 Enemy enemy = enemyGO.GetComponent<Enemy>();
                 enemy.SetTower(_tower);
                 enemy.SetState(AIUnit.EnemyState.RunState);
-                
-                _tower.Enemies.Add(enemy);
+                _enemies.Add(enemy);
 
                 currentSpawnTimer = startSpawnDelay;
                 totalSpawnedEnemies++;

@@ -45,40 +45,40 @@ public class AIUnit : MonoBehaviour
 
     public void AttackStateEnter()
     {
-        Debug.Log($"Attack state enter");
+      //  Debug.Log($"Attack state enter");
         _agent.enabled = false;
         transform.parent.LookAt(_tower.transform);
     }
     public void AttackStateUpdate()
     {
-        Debug.Log($"Attack state update");
+      //  Debug.Log($"Attack state update");
         _enemyAttack.Attack();
     }
     public void AttackStateExit()
     {
-        Debug.Log($"Attack state exit");
+       // Debug.Log($"Attack state exit");
     }
     public void IdleStateEnter()
     {
-        Debug.Log("Idle state enter");
+      //  Debug.Log("Idle state enter");
     }
     public void IdleStateUpdate()
     {
-        Debug.Log("Idle state update");
+       // Debug.Log("Idle state update");
     }
     public void IdleStateExit()
     {
-        Debug.Log("Idle state exit");
+       // Debug.Log("Idle state exit");
     }
     public void RunStateEnter()
     {
         Vector3 targetPos = AIManager.Instance._aiTargetPositions.Dequeue();
-        Debug.Log($"Run state enter");
+       // Debug.Log($"Run state enter");
         _agent.SetDestination(targetPos);
     }
     public void RunStateUpdate()
     {
-        Debug.Log($"Run state update");
+       // Debug.Log($"Run state update");
 
         if (_agent.pathPending)
         {
@@ -94,19 +94,19 @@ public class AIUnit : MonoBehaviour
     }
     public void RunStateExit()
     {
-        Debug.Log($"Run state exit");
+       // Debug.Log($"Run state exit");
     }
     public void DeadStateEnter()
     {
-        Debug.Log("Dead state enter");
+      //  Debug.Log("Dead state enter");
     }
     public void DeadStateUpdate()
     {
-        Debug.Log("Dead state update");
+       // Debug.Log("Dead state update");
     }
     public void DeadStateExit()
     {
-        Debug.Log("Dead state exit");
+      //  Debug.Log("Dead state exit");
     }
     public void SetState(EnemyState targetState)
     {

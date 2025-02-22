@@ -25,7 +25,7 @@ namespace AloneTower
 
         public void Attack()
         {
-            Debug.Log("Attack");
+           // Debug.Log("Attack");
             Tower tower = GetComponentInParent<Enemy>().GetTower();
             healthSlider = tower.healthSlider;
             transform.LookAt(tower.transform);
