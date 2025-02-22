@@ -3936,10 +3936,7 @@ PrefabInstance:
     - {fileID: 9124384731083942822, guid: aae952dc76387e84287a598d901b120d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2796068601526596500, guid: aae952dc76387e84287a598d901b120d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1889301311}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae952dc76387e84287a598d901b120d, type: 3}
 --- !u!1001 &414083890
 PrefabInstance:
@@ -11522,7 +11519,7 @@ MonoBehaviour:
   - {fileID: 1728109022}
   - {fileID: 990722947}
   startSpawnDelay: 0.5
-  totalEnemyCount: 1
+  totalEnemyCount: 55
   totalSpawnedEnemies: 0
   _enemyTarget: {fileID: 2047994397}
 --- !u!4 &1247910973
@@ -11648,6 +11645,10 @@ PrefabInstance:
     - target: {fileID: 2144307424989607752, guid: 81d637f0ccd4bda488bab9bdfb95847a, type: 3}
       propertyPath: m_Name
       value: VFXExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144307424989607752, guid: 81d637f0ccd4bda488bab9bdfb95847a, type: 3}
+      propertyPath: m_TagString
+      value: vfx_explosion_tower
       objectReference: {fileID: 0}
     - target: {fileID: 3252704382711856008, guid: 81d637f0ccd4bda488bab9bdfb95847a, type: 3}
       propertyPath: m_Enabled
@@ -11875,6 +11876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 2047994398}
   RadiusAroundTarget: 3
+  Units: []
 --- !u!4 &1319827956
 Transform:
   m_ObjectHideFlags: 0
@@ -16085,27 +16087,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5725000371507048362, guid: b2452a5c2cd649a4db9eebcd16f7b155, type: 3}
   m_PrefabInstance: {fileID: 487315245}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1889301308 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2796068601526596500, guid: aae952dc76387e84287a598d901b120d, type: 3}
-  m_PrefabInstance: {fileID: 411037783}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &1889301311
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889301308}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 3.0000002, y: 0.685, z: 3.0000002}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 3.0000002, y: -0.11, z: 3.0000002}
-  m_TimeToStationary: 0.5
 --- !u!4 &1890657128 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1453485022173259434, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
@@ -16532,7 +16513,7 @@ GameObject:
   - component: {fileID: 1972577473}
   m_Layer: 0
   m_Name: SoundController
-  m_TagString: Untagged
+  m_TagString: sounds_controller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17722,6 +17703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 2521846834753019998, guid: 545adcd66f1094f4ab94ee4e2b4356d4, type: 3}
+      propertyPath: m_TagString
+      value: health_slider
+      objectReference: {fileID: 0}
     - target: {fileID: 3003531183752453513, guid: 545adcd66f1094f4ab94ee4e2b4356d4, type: 3}
       propertyPath: m_Value
       value: 100
@@ -17831,13 +17816,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2053127330}
     m_Modifications:
+    - target: {fileID: 2438917361398931389, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
+      propertyPath: m_TagString
+      value: tower_fire_point
+      objectReference: {fileID: 0}
     - target: {fileID: 3370031335986375343, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
       propertyPath: _firePoint
       value: 
       objectReference: {fileID: 116324313}
     - target: {fileID: 3370031335986375343, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
       propertyPath: _fireSpeed
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3370031335986375343, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
       propertyPath: _towerHead
@@ -17869,7 +17858,7 @@ PrefabInstance:
       objectReference: {fileID: 1051538973}
     - target: {fileID: 3370031335986375343, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
       propertyPath: _attackRadius
-      value: 60
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3370031335986375343, guid: 5e78d180c2c53d749b1ebb7a729d93b4, type: 3}
       propertyPath: _healthSlider

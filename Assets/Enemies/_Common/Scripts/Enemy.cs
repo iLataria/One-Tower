@@ -10,7 +10,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyAttack _enemyAttack;
     [SerializeField] private Collider _collider;
     [SerializeField] private ParticleSystem _particleSystem;
-    [SerializeField] private GameObject _visuals;   
+    [SerializeField] private GameObject _visuals;
+
+    public bool _isAlive = true;
 
     private Tower _tower;
 

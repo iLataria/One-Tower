@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Tower
+  - health_slider
+  - vfx_explosion_tower
+  - sounds_controller
+  - tower_fire_point
   layers:
   - Default
   - TransparentFX
