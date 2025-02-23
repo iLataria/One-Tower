@@ -6,16 +6,16 @@ public abstract class BaseState
 {
     public virtual void Entry()
     {
-        //Debug.Log($"Entry {ToString()}");
+        Debug.Log($"Entry {ToString()}");
     }
 
     public virtual void Update()
     {
-        ///Debug.Log($"Update {ToString()}");
+        Debug.Log($"Update {ToString()}");
     }
 
     public virtual void Exit()
     {
-        ///Debug.Log($"Exit {ToString()}");
+        Debug.Log($"Exit {ToString()}");
     }
 }
