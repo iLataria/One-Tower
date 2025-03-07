@@ -38,10 +38,7 @@ namespace AloneTower
             }
         }
 
-        public void Idle()
-        {   if(_animator != null)
-            _animator.SetBool("TowerIsDead", true);
-        }
+       
         private IEnumerator Damage() 
         {
             if (!healthSlider)
