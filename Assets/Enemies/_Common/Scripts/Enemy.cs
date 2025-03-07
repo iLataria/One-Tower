@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        SetState(new EnemyIdleState(this));
+        SetState(new EnemyRunState(_aiUnit,this));
     }
 
     private void Update()

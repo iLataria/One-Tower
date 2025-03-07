@@ -33,7 +33,7 @@ namespace AloneTower
             
             if (!IsCoroutineStarted)
             {
-               coroutine= StartCoroutine(DamageRating()); 
+               coroutine= StartCoroutine(Damage()); 
                 
             }
         }
@@ -42,7 +42,7 @@ namespace AloneTower
         {   if(_animator != null)
             _animator.SetBool("TowerIsDead", true);
         }
-        private IEnumerator DamageRating() 
+        private IEnumerator Damage() 
         {
             if (!healthSlider)
                 yield break;
@@ -54,8 +54,9 @@ namespace AloneTower
                 yield return new WaitForSeconds(damageRate);
                 healthSlider.value -= enemyDamage;    
             }
-            Idle();
             IsCoroutineStarted=false;
+            Enemy enemy = GetComponentInParent<Enemy>();
+            enemy.SetState(new EnemyIdleState(enemy));
             
         }
         
