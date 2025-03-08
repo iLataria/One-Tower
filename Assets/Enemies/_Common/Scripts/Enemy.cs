@@ -24,10 +24,29 @@ public class Enemy : MonoBehaviour
     public ParticleSystem GetParticleSystem() => _particleSystem;
     public void SetTower(Tower tower) => _tower = tower;
     public Tower GetTower()=> _tower;
+    private BaseState _state;
 
-    public void SetState(AIUnit.EnemyState targetState)
+    private void Awake()
     {
-        _aiUnit.SetState(targetState);
+        SetState(new EnemyRunState(_aiUnit,this));
+    }
+
+    private void Update()
+    {
+        _state.Update();
+    }
+
+    public void SetState(BaseState nextState)
+    {
+        if (nextState == null)
+        {
+            Debug.Log($"Next state is null");
+            return;
+        }
+
+        _state?.Exit();
+        _state = nextState;
+        _state.Entry();
     }
 
 
