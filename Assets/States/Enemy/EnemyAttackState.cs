@@ -11,24 +11,31 @@ public class EnemyAttackState : BaseState
     private AIUnit _aiUnit;
     private Enemy _enemy;
     private EnemyAttack _enemyAttack;
+
     public EnemyAttackState(Enemy enemy)
     {
         _enemy = enemy;
         _aiUnit = _enemy.GetAIUnit();
         _enemyAttack = _enemy.GetEnemyAttack();
-        _healthSlider = GameObject.FindGameObjectWithTag("health_slider").GetComponent<Slider>();
+        _healthSlider = GameObject.FindGameObjectWithTag("health_slider").GetComponent<Slider>(); //tmp
     }
+
     public override void Entry()
     {
         base.Entry();
         _aiUnit.transform.parent.LookAt(_enemy.GetTower().transform);
+        _enemy.Animator.SetTrigger("ReadyToAttack");
     }
 
     public override void Update()
     {
         base.Update();
-        _enemyAttack.Attack();
 
+        if (_healthSlider.value <= 0)
+        {
+            _enemy.SetState(new EnemyIdleState(_enemy));
+            return;
+        }
     }
 
     public override void Exit()

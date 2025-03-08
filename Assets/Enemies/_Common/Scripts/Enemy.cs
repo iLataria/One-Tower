@@ -11,10 +11,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Collider _collider;
     [SerializeField] private ParticleSystem _particleSystem;
     [SerializeField] private GameObject _visuals;
+    [SerializeField] private Animator _animator;
 
     public bool _isAlive = true;
 
     private Tower _tower;
+
+    public Animator Animator => _animator;
 
     public AIUnit GetAIUnit() => _aiUnit;
     public GameObject GetVisuals() => _visuals;
@@ -34,6 +37,11 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         _state.Update();
+    }
+
+    public void Attack() // called from attack animation timeline
+    {
+        _enemyAttack.Attack();
     }
 
     public void SetState(BaseState nextState)

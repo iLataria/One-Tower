@@ -10,8 +10,9 @@ public class EnemyIdleState: BaseState
     public EnemyIdleState(Enemy enemy)
     {
         _enemy = enemy;
-        _animator=enemy.GetVisuals().GetComponent<Animator>();
+        _animator = enemy.Animator;
     }
+
     public override void Entry()
     {
         base.Entry();

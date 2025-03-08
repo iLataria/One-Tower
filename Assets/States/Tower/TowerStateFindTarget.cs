@@ -8,7 +8,7 @@ public class TowerStateFindTarget : BaseState
 {
     private Tower _tower;
     private Slider _healthSlider;
-    private Transform _target;
+    private Transform _searchingTarget;
 
     private Transform _targetInPreviousFrame;
     private SpawnerModule _spawnerModule;
@@ -23,24 +23,12 @@ public class TowerStateFindTarget : BaseState
     {
         base.Entry();
         _spawnerModule = GameObject.FindAnyObjectByType<SpawnerModule>();
-
-        _target = GetClosestTarget(_tower.AttackRadius);
-
-        Debug.Log($"Nearest enemy {_target.name}");
-        bool isTargetInRadius = IsClosestTargetInTowerAttackRadius(_target);
-
-        if (isTargetInRadius)
-        {
-            Debug.Log($"Attack");
-            Enemy enemy = _target.GetComponent<Enemy>();
-            _tower.SetState(new TowerStateAttackTarget(_tower, enemy.GetFireTarget()));
-            return;
-        }
     }
 
     public override void Exit()
     {
         base.Exit();
+        _searchingTarget = null;
     }
 
     public override void Update()
@@ -49,7 +37,24 @@ public class TowerStateFindTarget : BaseState
 
         if (_healthSlider.value <= 0)
         {
-            _tower.SetState(null);
+            //_tower.SetState(null);
+            return;
+        }
+
+        if (!_searchingTarget)
+            _searchingTarget = GetClosestTarget(_tower.AttackRadius);
+
+        if (!_searchingTarget)
+            return;
+
+        Debug.Log($"Nearest enemy {_searchingTarget.name}");
+        bool isTargetInRadius = IsClosestTargetInTowerAttackRadius(_searchingTarget);
+
+        if (isTargetInRadius)
+        {
+            Debug.Log($"Attack");
+            Enemy enemy = _searchingTarget.GetComponent<Enemy>();
+            _tower.SetState(new TowerStateAttackTarget(_tower, enemy.GetFireTarget()));
             return;
         }
     }

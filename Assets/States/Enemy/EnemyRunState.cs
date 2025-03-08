@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using static AIUnit;
 
 public class EnemyRunState : BaseState
 {   
     private AIUnit _aiUnit;
     private Enemy _enemy;
+    private Slider _healthSlider;
+
     public EnemyRunState( AIUnit aiUnit,Enemy enemy)
     {
         _enemy = enemy;
@@ -18,6 +21,8 @@ public class EnemyRunState : BaseState
         base.Entry();
         Vector3 targetPos = AIManager.Instance._aiTargetPositions.Dequeue();
         _aiUnit.Agent.SetDestination(targetPos);
+
+        _healthSlider = GameObject.FindGameObjectWithTag("health_slider").GetComponent<Slider>(); //tmp
     }
 
     public override void Update()
@@ -28,10 +33,18 @@ public class EnemyRunState : BaseState
             Debug.Log($"Pending");
             return;
         }
+
         bool isArrived = _aiUnit.Agent.remainingDistance <= .1f;
         if (isArrived)
         {
            _enemy.SetState(new EnemyAttackState(_enemy));
+            return;
+        }
+
+        //float towerHealth = 0; // получить жизни башни из скрипта башни
+        if(_healthSlider.value <= 0)
+        {
+            _enemy.SetState(new EnemyIdleState(_enemy));
             return;
         }
     }
