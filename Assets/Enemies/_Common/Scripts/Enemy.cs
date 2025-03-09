@@ -27,11 +27,12 @@ public class Enemy : MonoBehaviour
     public ParticleSystem GetParticleSystem() => _particleSystem;
     public void SetTower(Tower tower) => _tower = tower;
     public Tower GetTower()=> _tower;
+
     private BaseState _state;
 
     private void Awake()
     {
-        SetState(new EnemyRunState(_aiUnit,this));
+        SetState(new EnemyRunState(this));
     }
 
     private void Update()

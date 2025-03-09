@@ -15,21 +15,22 @@ namespace AloneTower.Towers
         [SerializeField] private float _aimRotationSpeed;
         [SerializeField] private float _attackRadius;
         [SerializeField] private ParticleSystem _VFXExplosionTower;
-        [SerializeField] public Slider healthSlider;
+        [SerializeField] private Slider _healthSlider;
         [SerializeField] private ParticleSystem _deadEffect;
         [SerializeField] private GameObject _restartButton;
 
+        public float AimRotationSpeed => _aimRotationSpeed;
         public float AttackRadius => _attackRadius;
+        public Slider HealthSlider => _healthSlider;
         public Transform Head => _towerHead;
         public float FireSpeed => _fireSpeed;
-        public float AimRotationSpeed => _aimRotationSpeed;
         public Transform Barrel => _towerBarrel;
         private BaseState _state;
 
         private void Awake()
         {
             _restartButton.SetActive(false);
-            SetState(new TowerStatesIdle(this));
+            SetState(new TowerIdleState(this));
         }
 
         public void SetState(BaseState nextState)

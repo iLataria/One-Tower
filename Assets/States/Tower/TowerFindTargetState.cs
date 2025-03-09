@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TowerStateFindTarget : BaseState
+public class TowerFindTargetState: BaseState
 {
     private Tower _tower;
     private Slider _healthSlider;
@@ -13,7 +13,7 @@ public class TowerStateFindTarget : BaseState
     private Transform _targetInPreviousFrame;
     private SpawnerModule _spawnerModule;
 
-    public TowerStateFindTarget(Tower tower)
+    public TowerFindTargetState(Tower tower)
     {
         _healthSlider = GameObject.FindGameObjectWithTag("health_slider").GetComponent<Slider>();
         _tower = tower;
@@ -54,7 +54,7 @@ public class TowerStateFindTarget : BaseState
         {
             Debug.Log($"Attack");
             Enemy enemy = _searchingTarget.GetComponent<Enemy>();
-            _tower.SetState(new TowerStateAttackTarget(_tower, enemy.GetFireTarget()));
+            _tower.SetState(new TowerAttackTargetState(_tower, enemy.GetFireTarget()));
             return;
         }
     }

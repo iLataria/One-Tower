@@ -77,7 +77,6 @@ namespace AloneTower.SpawnSystem
                 enemyGO.name = $"{_nameCounter++}";
                 Enemy enemy = enemyGO.GetComponent<Enemy>();
                 enemy.SetTower(_tower);
-                //enemy.SetState(AIUnit.EnemyState.RunState);
                 _enemies.Add(enemy);
 
                 currentSpawnTimer = startSpawnDelay;

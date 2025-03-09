@@ -13,15 +13,6 @@ public class SoundController : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
     }
-    void Update()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("Space");
-            PlaySound();
-        }
-    }
-
     public void PlaySound()
     {
         int soundNumber = Random.Range(0, _fireSounds.Length);

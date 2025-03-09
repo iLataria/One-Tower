@@ -17,7 +17,7 @@ public class EnemyAttackState : BaseState
         _enemy = enemy;
         _aiUnit = _enemy.GetAIUnit();
         _enemyAttack = _enemy.GetEnemyAttack();
-        _healthSlider = GameObject.FindGameObjectWithTag("health_slider").GetComponent<Slider>(); //tmp
+        _healthSlider = _enemy.GetTower().HealthSlider; 
     }
 
     public override void Entry()

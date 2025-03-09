@@ -12,21 +12,14 @@ namespace AloneTower
         private float enemyDamage = 2f;
 
         [SerializeField]
-        private float damageRate = 2f;
-
-        [SerializeField]
         private Animator _animator;
 
-        private Coroutine coroutine;
-
         public Slider healthSlider;
-
-        private bool IsCoroutineStarted = false;
 
         public void Attack()
         {
             Tower tower = GetComponentInParent<Enemy>().GetTower();
-            healthSlider = tower.healthSlider;
+            healthSlider = tower.HealthSlider;
             transform.LookAt(tower.transform);
 
             if (_animator != null)

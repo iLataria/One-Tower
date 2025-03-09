@@ -7,7 +7,7 @@ using System.Security;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class TowerStateAttackTarget : BaseState
+public class TowerAttackTargetState: BaseState
 {
     private Tower _tower;
     private Transform _target;
@@ -19,7 +19,7 @@ public class TowerStateAttackTarget : BaseState
     private Transform _firePoint;
     private SpawnerModule _spawnerModule;
 
-    public TowerStateAttackTarget(Tower tower, Transform target)
+    public TowerAttackTargetState(Tower tower, Transform target)
     {
         _tower = tower;
         _target = target;
@@ -110,7 +110,7 @@ public class TowerStateAttackTarget : BaseState
         _spawnerModule.Enemies.Remove(enemy);
         GameObject.Destroy(enemy.gameObject);
 
-        _tower.SetState(new TowerStateFindTarget(_tower));
+        _tower.SetState(new TowerFindTargetState(_tower));
         //Implement setStateEnemy;
     }
 

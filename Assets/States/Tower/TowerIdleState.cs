@@ -2,12 +2,12 @@ using AloneTower.SpawnSystem;
 using AloneTower.Towers;
 using UnityEngine;
 
-public class TowerStatesIdle : BaseState
+public class TowerIdleState : BaseState
 {
     private Tower _tower;
     private SpawnerModule spawnerModule;
 
-    public TowerStatesIdle(Tower tower)
+    public TowerIdleState(Tower tower)
     {
         _tower = tower;
     }
@@ -22,7 +22,7 @@ public class TowerStatesIdle : BaseState
     private void GetOnSpawnBeginHandler()
     {
         Debug.Log($"Test");
-        _tower.SetState(new TowerStateFindTarget(_tower));
+        _tower.SetState(new TowerFindTargetState(_tower));
     }
 
     public override void Exit()

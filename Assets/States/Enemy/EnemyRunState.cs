@@ -10,10 +10,10 @@ public class EnemyRunState : BaseState
     private Enemy _enemy;
     private Slider _healthSlider;
 
-    public EnemyRunState( AIUnit aiUnit,Enemy enemy)
+    public EnemyRunState( Enemy enemy)
     {
         _enemy = enemy;
-        _aiUnit = aiUnit; 
+        _aiUnit = _enemy.GetAIUnit(); 
     }
 
     public override void Entry()
@@ -41,7 +41,7 @@ public class EnemyRunState : BaseState
             return;
         }
 
-        //float towerHealth = 0; // получить жизни башни из скрипта башни
+         // получить жизни башни из скрипта башни
         if(_healthSlider.value <= 0)
         {
             _enemy.SetState(new EnemyIdleState(_enemy));
