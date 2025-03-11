@@ -52,7 +52,7 @@ namespace AloneTower.SpawnSystem
                 
                 Instantiate(enemiesPrefab[randEnemyIndex],
                     spawnPoints[randomPointIndex].transform.position, Quaternion.identity)
-                    .GetComponent<EnemyAttack>().healthSlider=healthSlider;
+                    .GetComponent<EnemyAttack>().towerHealthSlider=healthSlider;
 
                 currentSpawnTimer = startSpawnDelay;
                 totalSpawnedEnemies++;

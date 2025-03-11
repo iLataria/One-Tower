@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class EnemyAttackState : BaseState
 {
-    private Slider _healthSlider;
+    private Slider _towerHealthSlider;
     private AIUnit _aiUnit;
     private Enemy _enemy;
     private EnemyAttack _enemyAttack;
@@ -17,7 +17,7 @@ public class EnemyAttackState : BaseState
         _enemy = enemy;
         _aiUnit = _enemy.GetAIUnit();
         _enemyAttack = _enemy.GetEnemyAttack();
-        _healthSlider = _enemy.GetTower().HealthSlider; 
+        _towerHealthSlider = _enemy.GetTower().HealthSlider; 
     }
 
     public override void Entry()
@@ -31,7 +31,7 @@ public class EnemyAttackState : BaseState
     {
         base.Update();
 
-        if (_healthSlider.value <= 0)
+        if (_towerHealthSlider.value <= 0)
         {
             _enemy.SetState(new EnemyIdleState(_enemy));
             return;

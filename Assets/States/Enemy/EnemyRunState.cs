@@ -8,7 +8,7 @@ public class EnemyRunState : BaseState
 {   
     private AIUnit _aiUnit;
     private Enemy _enemy;
-    private Slider _healthSlider;
+    private Slider _towerHealthSlider;
 
     public EnemyRunState( Enemy enemy)
     {
@@ -22,7 +22,7 @@ public class EnemyRunState : BaseState
         Vector3 targetPos = AIManager.Instance._aiTargetPositions.Dequeue();
         _aiUnit.Agent.SetDestination(targetPos);
 
-        _healthSlider = GameObject.FindGameObjectWithTag("health_slider").GetComponent<Slider>(); //tmp
+        _towerHealthSlider = GameObject.FindGameObjectWithTag("health_slider").GetComponent<Slider>(); //tmp
     }
 
     public override void Update()
@@ -42,7 +42,7 @@ public class EnemyRunState : BaseState
         }
 
          // получить жизни башни из скрипта башни
-        if(_healthSlider.value <= 0)
+        if(_towerHealthSlider.value <= 0)
         {
             _enemy.SetState(new EnemyIdleState(_enemy));
             return;

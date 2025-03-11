@@ -14,18 +14,18 @@ namespace AloneTower
         [SerializeField]
         private Animator _animator;
 
-        public Slider healthSlider;
+        public Slider towerHealthSlider;
 
         public void Attack()
         {
             Tower tower = GetComponentInParent<Enemy>().GetTower();
-            healthSlider = tower.HealthSlider;
+            towerHealthSlider = tower.HealthSlider;
             transform.LookAt(tower.transform);
 
             if (_animator != null)
                 _animator.SetTrigger("ReadyToAttack");
 
-            healthSlider.value -= enemyDamage;
+            towerHealthSlider.value -= enemyDamage;
         }
     }
 }
